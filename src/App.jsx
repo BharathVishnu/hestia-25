@@ -156,7 +156,7 @@ function App() {
 
           <div className="w-full">
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </BrowserRouter>
       </div>
