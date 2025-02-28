@@ -17,6 +17,8 @@ import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
 import { UserContext } from "../../context/user.jsx";
 import EventBanner from "../../components/home/EventBanner.jsx";
+import Hero from "../../components/home/Hero.jsx";
+
 
 
 const HomePage = () => {
@@ -42,7 +44,7 @@ const HomePage = () => {
 
   return (
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
-          <MainHero title={"Hestia'25"} subtitle={""} keyC={2} />
+          <Hero />
           <Carousel />
           <EventBanner/>
           <Events/>
