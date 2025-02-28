@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className='section' style={{ fontFamily: 'okami' }}>
       <div className="text-center absolute inset-0 flex items-center justify-center">
-        <h1 className='text-[220px] z-10 relative'>HESTIA</h1>
+        <h1 className='md:text-[220px] text-9xl z-10 relative'>HESTIA</h1>
       </div>
       <div className='halftone'></div>
     </div>
