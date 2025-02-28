@@ -1,6 +1,5 @@
-
-import { useState, useEffect } from "react";
-import Marquee from "../Marquee/Marquee";
+import { useAnimate } from "framer-motion";
+import React, { useRef } from "react";
 import img1 from "../../assets/images/pastEvents/img1.jpg"
 import img4 from "../../assets/images/pastEvents/img4.jpg"
 import img6 from "../../assets/images/pastEvents/img6.jpg"
@@ -30,160 +29,102 @@ import img26 from "../../assets/images/pastEvents/img26.JPG"
 import img27 from "../../assets/images/pastEvents/img27.JPG"
 import img28 from "../../assets/images/pastEvents/img28.JPG"
 
-const images = [
-
-  {
-    src: img1,
-    alt: "Image 1",
-  },
-  {
-    src: img2,
-    alt: "Image 2",
-  },
-  {
-    src: img3,
-    alt: "Image 1",
-  },
-  {
-    src: img4,
-    alt: "Image 1",
-  },
-  {
-    src: img5,
-    alt: "Image 2",
-  },
-  {
-    src: img6,
-    alt: "Image 1",
-  },
-  {
-    src: img7,
-    alt: "Image 1",
-  },
-  {
-    src: img8,
-    alt: "Image 2",
-  },
-  {
-    src: img9,
-    alt: "Image 1",
-  },
-  {
-    src: img10,
-    alt: "Image 1",
-  },
-  {
-    src: img11,
-    alt: "Image 2",
-  },
-  {
-    src: img12,
-    alt: "Image 1",
-  },
-  {
-    src: img13,
-    alt: "Image 1",
-  },
-  {
-    src: img14,
-    alt: "Image 2",
-  },
-  {
-    src: img1,
-    alt: "Image 1",
-  },
-
-
-];
-
-const imagesClass2 = [
-
-  {
-    src: img15,
-    alt: "Image 1",
-  },
-  {
-    src: img16,
-    alt: "Image 2",
-  },
-  {
-    src: img17,
-    alt: "Image 1",
-  },
-  {
-    src: img18,
-    alt: "Image 1",
-  },
-  {
-    src: img19,
-    alt: "Image 2",
-  },
-  {
-    src: img20,
-    alt: "Image 1",
-  },
-
-  {
-    src: img21,
-    alt: "Image 1",
-  },
-  {
-    src: img22,
-    alt: "Image 2",
-  },
-  {
-    src: img23,
-    alt: "Image 1",
-  },
-
-  {
-    src: img24,
-    alt: "Image 1",
-  },
-  {
-    src: img25,
-    alt: "Image 2",
-  },
-  {
-    src: img26,
-    alt: "Image 1",
-  },
-  {
-    src: img27,
-    alt: "Image 1",
-  },
-  {
-    src: img28,
-    alt: "Image 2",
-  },
-
-];
-
-
-
-
 const PastEvents = () => {
-  const [delay, setDelay] = useState(150);
-  const [windowSize, setWindowSize] = useState("220px");
-
-  useEffect(() => {
-    if (window.innerWidth > 768) {
-      setWindowSize("280px");
-    } else {
-      setWindowSize("200px");
-    }
-  }, []);
   return (
-    <div className="bg-black max-h-[400px] md:max-h-[600px] overflow-hidden">
-      <div className=" relative flex flex-col  items-center">
-        <div className="absolute top-[25%] md:top-[20%] z-20">
-          <h1 className=" text-[50px] md:text-[100px]  text-gray-200 hover:text-[#FBF0C2]" style={{ fontFamily: 'CharlieDotted' }} >EXPLORE HESTIA</h1>
-        </div>
-        <Marquee ltr delay={delay} windowSize={windowSize} elements={images} />
-        <Marquee delay={delay} windowSize={windowSize} elements={imagesClass2} />
-        <Marquee delay={delay} windowSize={windowSize} elements={images} />
-        <Marquee ltr delay={delay} windowSize={windowSize} elements={imagesClass2} />
-      </div>
+    <MouseImageTrail
+      renderImageBuffer={50}
+      rotationRange={25}
+      images={[img1, img2, img3, img4, img5, img6, img7, img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26,img27,img28]}
+    >
+      <section className="grid h-screen w-full place-content-center bg-black">
+        <p className="flex justify-center gap-2 font-bold uppercase">
+          <span className="text-white text-4xl md:text-8xl text-center" style={{ fontFamily: 'okami' }}>EXPLORE HESTIA</span>
+        </p>
+      </section>
+    </MouseImageTrail>
+  );
+};
+
+const MouseImageTrail = ({
+  children,
+  images,
+  renderImageBuffer,
+  rotationRange,
+}) => {
+  const [scope, animate] = useAnimate();
+  const lastRenderPosition = useRef({ x: 0, y: 0 });
+  const imageRenderCount = useRef(0);
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const distance = calculateDistance(
+      clientX,
+      clientY,
+      lastRenderPosition.current.x,
+      lastRenderPosition.current.y
+    );
+
+    if (distance >= renderImageBuffer) {
+      lastRenderPosition.current.x = clientX;
+      lastRenderPosition.current.y = clientY;
+      renderNextImage();
+    }
+  };
+
+  const calculateDistance = (x1, y1, x2, y2) => {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  };
+
+  const renderNextImage = () => {
+    const imageIndex = imageRenderCount.current % images.length;
+    const selector = `[data-mouse-move-index="${imageIndex}"]`;
+    const el = document.querySelector(selector);
+
+    if (!el) return;
+
+    el.style.top = `${lastRenderPosition.current.y}px`;
+    el.style.left = `${lastRenderPosition.current.x}px`;
+    el.style.zIndex = imageRenderCount.current.toString();
+
+    const rotation = Math.random() * rotationRange;
+
+    animate(
+      selector,
+      {
+        opacity: [0, 1],
+        transform: [
+          `translate(-50%, -25%) scale(0.5) ${
+            imageIndex % 2 ? `rotate(${rotation}deg)` : `rotate(-${rotation}deg)`
+          }`,
+          `translate(-50%, -50%) scale(1) ${
+            imageIndex % 2 ? `rotate(-${rotation}deg)` : `rotate(${rotation}deg)`
+          }`,
+        ],
+      },
+      { type: "spring", damping: 15, stiffness: 200 }
+    );
+
+    animate(
+      selector,
+      { opacity: [1, 0] },
+      { ease: "linear", duration: 0.5, delay: 5 }
+    );
+
+    imageRenderCount.current++;
+  };
+
+  return (
+    <div ref={scope} className="relative overflow-hidden" onMouseMove={handleMouseMove}>
+      {children}
+      {images.map((img, index) => (
+        <img
+          className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-black bg-neutral-900 object-cover opacity-0"
+          src={img}
+          alt={`Event Image ${index}`}
+          key={index}
+          data-mouse-move-index={index}
+        />
+      ))}
     </div>
   );
 };

@@ -37,7 +37,7 @@ function Navbar() {
 
   return (<>
 
-    <div className="flex bg-black py-2 bg-opacity-5 animate-pulse justify-center items-center absolute top-12 w-full px-5 z-[100]  font-Geomanist ">
+    <div className="flex bg-transparent py-2 bg-opacity-5 justify-center items-center absolute top-12 w-full px-5 z-[100]  font-Geomanist ">
 
       <div className="flex justify-between min-w-full bg-primary-dark rounded-md lg:bg-transparent px-2 lg:w-[93%] overflow-x-auto lg:px-10">
         <div className="flex justify-start text-white  items-center rounded-md">
@@ -63,7 +63,7 @@ function Navbar() {
         </div> */}
          <div className="flex bg-transparent lg:min-w-[45%] items-center rounded-md py-2 px-5 justify-around text-white" >
           {navigationLinks.map((link, key) => (
-            <Link key={key} className={`text-sm mx-2 lg:text-md uppercase  font-bold `} to={link[1]}>{link[0]}</Link>
+            <Link key={key} className={`text-sm lg:text-xl mx-2 lg:text-md uppercase  font-bold `} to={link[1]}>{link[0]}</Link>
           ))}
         </div>
 

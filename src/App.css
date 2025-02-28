@@ -23,3 +23,9 @@
     src: url('/fonts/bungee/bungee.layers-regular-regular.otf') format('opentype');
     color: #FBF0C2;
   }   
+
+  @font-face {
+    font-family: 'okami';
+    src: url('/fonts/Okami/Okami.otf') format('opentype');
+    color: #FBF0C2;
+  }   

@@ -40,14 +40,16 @@ const HomePage = () => {
 
 
   return (
-    <div className=" w-full max-w-screen overflow-hidden h-full " >
-          <MainHero title={"Hestia"} subtitle={""} keyC={2} />
-          {/* <Carousel /> */}
+    <div className=" w-full max-w-screen overflow-hidden h-full  " >
+          <MainHero title={"Hestia'25"} subtitle={""} keyC={2} />
+          <Carousel />
+          <PastEvents/>
+          <Carousel />
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />
 
-
+          
           <PastEvents /> */}
           {/* <div ref={getAppRef}>
             <GetApp />
