@@ -1,36 +1,38 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
-import DottedLine from "./DottedLine";
-import HomeMarque from "./HomeMarque";
+import React from 'react'
+import '../../styles/NewHero.css'
 
-import { LoaderContext } from "../../context/loader";
-import "../../styles/hero.css";
-import TextScramble from "./TextScramble";
-/**
- * Render a hero section with a title.
- * @function
- * @param {Object} props - The component props.
- * @param {string} props.title - The title to display in the hero section.
- * @param {string} [props.textSize="330px"] - The font size of the title.
- * @param {number} props.keyC - The unique key for the component instance.
- * @returns {JSX.Element} The JSX element representing the hero section.
- */
-function Hero({ title, subtitle, keyC }) {
-
-
+const Hero = () => {
   return (
-    <div className="hero-section w-full relative flex flex-col items-center">
-      <div
-        className="pl-[2%] md:pl-[1%]  grid-container w-full h-[480px] md:h-[400px] max-h-screen overflow-y-hidden"
-        ref={heroSectionRef}
+    <div className='section overflow-hidden' style={{ fontFamily: 'okami', position: 'relative' }}>
+      <div 
+        className='w-screen absolute'
+        style={{ 
+          height: '947px',
+          left: '0px',
+          top: '-500px',
+          backgroundImage: 'url(/src/assets/images/hero/background.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
-        {renderGridItems()}
+         <div 
+        className='w-screen absolute'
+        style={{ 
+          height: '947px',
+          top: '1091px',
+          top: '1091px',
+          backgroundImage: 'url(/src/assets/images/hero/background.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      ></div>
       </div>
-
+      <div className="text-center absolute inset-0 flex items-center justify-center">
+        <h1 className='text-[220px] z-10 relative'>HESTIA</h1>
+      </div>
+      <div className='halftone'></div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
