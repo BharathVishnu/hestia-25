@@ -16,6 +16,7 @@ import { DialogPopup } from '../../context/dialog.jsx';
 import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
 import { UserContext } from "../../context/user.jsx";
+import EventBanner from "../../components/home/EventBanner.jsx";
 
 
 const HomePage = () => {
@@ -43,8 +44,9 @@ const HomePage = () => {
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
           <MainHero title={"Hestia'25"} subtitle={""} keyC={2} />
           <Carousel />
-          <PastEvents/>
-          <Carousel />
+          <EventBanner/>
+          {/* <PastEvents/>
+          <Carousel /> */}
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />

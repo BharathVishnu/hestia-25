@@ -63,7 +63,7 @@ function Navbar() {
         </div> */}
          <div className="flex bg-transparent lg:min-w-[45%] items-center rounded-md py-2 px-5 justify-around text-white" >
           {navigationLinks.map((link, key) => (
-            <Link key={key} className={`text-sm lg:text-xl mx-2 lg:text-md uppercase  font-bold `} to={link[1]}>{link[0]}</Link>
+            <Link key={key} className={`btn text-sm lg:text-xl mx-2 lg:text-md uppercase font-bold `} to={link[1]}>{link[0]}</Link>
           ))}
         </div>
 
