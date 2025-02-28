@@ -31,8 +31,8 @@ function Navbar() {
 
   const smallScreen = useMediaQuery({maxWidth:"640px"})
   return (
-    <div className="flex bg-transparent pt-8 py-6 bg-opacity-5 justify-center items-center absolute top-12 w-full px-5 z-[100] font-Geomanist">
-      <div className="flex justify-between min-w-full bg-primary-dark rounded-md lg:bg-transparent px-2 lg:w-[93%] overflow-x-auto lg:px-10">
+    <div className="flex bg-transparent pt-8 py-6 bg-opacity-5 justify-center items-center absolute top-12 w-full px-5 z-[100] font-Geomanist ">
+      <div className="flex justify-between min-w-full bg-primary-dark rounded-md lg:bg-transparent px-2 lg:w-[93%] overflow-x-auto overflow-y-hidden lg:px-10">
       
         <div className="flex justify-start text-white items-center rounded-md">
           <div className="flex items-center font-bold mr-5 w-10 md:w-14">

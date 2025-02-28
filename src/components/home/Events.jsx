@@ -10,82 +10,37 @@ import Workshop from "../../assets/images/Events/Workshops.png";
 import Proshow from "../../assets/images/Events/pro1.png";
 import { Link, useNavigate, useMatch, Navigate } from "react-router-dom";
 import "../../styles/home.css";
+import EventCard from "./EventCard";
 
-const Card = ({ title, imageSrc }) => (
-  <div className="w-[228px] h-[295px] sm:w-[292px] sm:h-[295px] md:w-[305px] md:h-[395px] flex flex-col items-center relative">
-    <div className="w-56 h-72 sm:w-72 sm:h-72 md:w-90 md:h-96 bg-white relative overflow-hidden rounded-lg shadow-lg">
-      <img
-        src={imageSrc}
-        alt={title}
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-16 transform -rotate-90">
-        <h3 className="text-white tracking-wide text-xl md:text-3xl font-bold text-center font-poppins uppercase">
-          {title}
-        </h3>
+const Events = () => {
+  const events = [
+    { title: "Technicals", imageSrc: Technicals },
+    { title: "Culturals", imageSrc: Culturals },
+    { title: "Workshops", imageSrc: Workshop },
+    { title: "Informals", imageSrc: Workshop },
+  ];
+
+  const handleCardClick = (title) => {
+
+  };
+
+  return (
+    <div className="flex justify-center items-center p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {events.map((event, index) => (
+          <EventCard
+            key={index}
+            title={event.title}
+            imageSrc={event.imageSrc}
+            onClick={() => handleCardClick(event.title)}
+          />
+        ))}
       </div>
     </div>
-    <div className="w-32 flex items-center justify-center absolute bottom-0 right-0 bg-red-500" style={{ clipPath: "polygon(0 0, 100% 0, 100% 57%, 80% 100%, 1% 100%)" }}>
-      Check Out
-    </div>
-  </div>
-  
-);
-
-
-const Events = () => (
-  <div className="container mx-auto flex items-center justify-center mt-6 mb-7">
-    <div className="flex flex-col gap-4 lg:gap-4 lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0">
-      <Card title="Technicals" imageSrc={Technicals} />
-      <Card title="Culturals" imageSrc={Culturals} />
-      <Card title="Workshops" imageSrc={Workshop} />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Events;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
