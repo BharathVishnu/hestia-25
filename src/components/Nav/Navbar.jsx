@@ -50,7 +50,7 @@ function Navbar() {
               onMouseEnter={() => setHovered(key)}
               onMouseLeave={() => setHovered(null)}
             >
-              <Link className="text-sm lg:text-xl mx-2 lg:text-md uppercase font-bold p-2 relative z-10" to={path}  style={{ fontFamily: 'okami' }}>
+              <Link className="text-sm lg:text-xl mx-2 lg:text-md uppercase font-bold p-2 relative z-10" to={path}  style={{ fontFamily: 'rubik' }}>
                 {link}
               </Link>
               {
