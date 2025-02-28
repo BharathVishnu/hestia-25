@@ -29,3 +29,10 @@
     src: url('/fonts/Okami/Okami.otf') format('opentype');
     color: #FBF0C2;
   }   
+
+  @font-face {
+    font-family: 'rubik';
+    src: url('/fonts/rubik/RubikVinyl-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
