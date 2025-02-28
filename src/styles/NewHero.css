@@ -37,7 +37,7 @@
     &::before {
         background:
             linear-gradient(90deg,
-                #75D9B4, #AA6B71, #F2896F, #FFB87F, #FFEC72);
+                #646363, #646363, #646363, #646363, #646363);
         content: ''
     }
 
