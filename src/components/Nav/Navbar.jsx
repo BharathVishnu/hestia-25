@@ -33,7 +33,7 @@ function Navbar() {
   return (
     <div className="flex bg-transparent pt-8 py-6 bg-opacity-5 justify-center items-center absolute top-12 w-full px-5 z-[100] font-Geomanist">
       <div className="flex justify-between min-w-full bg-primary-dark rounded-md lg:bg-transparent px-2 lg:w-[93%] overflow-x-auto lg:px-10">
-        {/* Logo */}
+      
         <div className="flex justify-start text-white items-center rounded-md">
           <div className="flex items-center font-bold mr-5 w-10 md:w-14">
             <Link to="/">
@@ -41,8 +41,6 @@ function Navbar() {
             </Link>
           </div>
         </div>
-
-        {/* Navigation Links */}
         <div className="flex bg-transparent lg:min-w-[45%] items-center rounded-md py-2 px-5 justify-around text-white">
           {navigationLinks.map(([link, path], key) => (
             <motion.div
