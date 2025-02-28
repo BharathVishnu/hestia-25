@@ -41,7 +41,7 @@ function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="flex bg-transparent lg:min-w-[45%] items-center rounded-md py-2 px-5 justify-around text-white">
+        <div className="flex bg-transparent lg:min-w-[45%] items-center rounded-md py-2 px-5 justify-around text-black">
           {navigationLinks.map(([link, path], key) => (
             <motion.div
               key={key}
