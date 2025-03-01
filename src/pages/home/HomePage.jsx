@@ -47,6 +47,7 @@ const HomePage = () => {
           <MainHero title="Hestia" />
           <Carousel />
           <EventBanner/>
+          <Events/>
           {/* <PastEvents/>
           <Carousel /> */}
           {/* <About /> */}
