@@ -155,8 +155,7 @@ function App() {
           </Routes>
 
           <div className="w-full">
-
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </BrowserRouter>
       </div>
