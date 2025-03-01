@@ -2,7 +2,7 @@ export { default as Home } from './home/HomePage.jsx';
 export { default as Login } from './auth/LoginPage.jsx';
 export { default as CampusAmbassador } from './campus_ambassador/CampusAmbassador.jsx'
 export { default as NotFound } from './not_found/NotFound.jsx';
-export {default as Events} from './Events/Events.jsx';
+export {default as Events} from './Events/EventsCategoryPage.jsx';
 export {default as EventsCollection} from './Events/EventsListPage.jsx';
 export {default as EventDetails} from './Events/EventDetailViewPage.jsx';
 export {default as Contact} from './contact/ContactPage.jsx';
