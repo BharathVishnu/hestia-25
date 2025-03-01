@@ -11,8 +11,8 @@ function Navbar() {
   const navigationLinks = [
     ["Tickets", "/"],
     ["About", "/"],
-    ["Events", "/"],
-    ["Sponsors", "/"],
+    ["Events", "/events"],
+    ["Sponsors", "/merchandise"],
   ];
   const { tokenState } = useContext(UserContext);
   const [hovered, setHovered] = useState(null);

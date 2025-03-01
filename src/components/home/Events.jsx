@@ -11,6 +11,7 @@ import Proshow from "../../assets/images/Events/pro1.png";
 import { Link, useNavigate, useMatch, Navigate } from "react-router-dom";
 import "../../styles/home.css";
 import EventCard from "./EventCard";
+import EventHeader from "./EventHeader";
 
 const Events = () => {
   const events = [
@@ -25,8 +26,9 @@ const Events = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
+    <div className="flex flex-col p-6">
+      <EventHeader/>
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
         {events.map((event, index) => (
           <EventCard
             key={index}
