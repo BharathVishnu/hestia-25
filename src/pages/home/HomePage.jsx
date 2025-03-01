@@ -11,7 +11,8 @@ import FaQ from "../../components/faq/Faq.jsx";
 import { AlertBar } from "../../components/home/AlertBar.jsx";
 import { BASE_URL } from "../../constants/urls.js";
 import GetApp from "../../components/home/GetApp.jsx";
-import Carousel from "../../components/home/HeroCarousel.jsx";
+import HeroCarousel from "../../components/home/HeroCarousel.jsx"; 
+import CheckoutCarousel from "../../components/home/CheckoutappCarousel.jsx"; 
 import { DialogPopup } from '../../context/dialog.jsx';
 import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
@@ -45,11 +46,11 @@ const HomePage = () => {
   return (
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
           <MainHero title="Hestia" />
-          <Carousel />
-          <EventBanner/>
+          <HeroCarousel  />
+          {/*<EventBanner/>
           <Events/>
-          {/* <PastEvents/>
-          <Carousel /> */}
+          {/* <PastEvents/>*/}
+          <CheckoutCarousel />
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />
