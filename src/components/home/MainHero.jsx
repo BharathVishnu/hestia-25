@@ -6,6 +6,9 @@ import React, {
 } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
+import Headerbackground from "../../assets/images/hero/background.webp"
+import Headerbackground2 from "../../assets/images/hero/background2.webp"
+
 gsap.registerPlugin(ScrollTrigger);
 
 import { LoaderContext } from "../../context/loader";
@@ -23,15 +26,27 @@ import Carousel from "./HeroCarousel";
  */
 function MainHero({ title, subtitle, keyC }) {
   return (
-    <div className="main-hero w-full relative flex flex-col items-center" >
-      <div
-        className="pl-[2%] md:pl-[1%]  grid-container w-full h-[660px] max-h-screen overflow-y-hidden md:h-screen "
-      >
+    <div className="section relative min-h-screen overflow-hidden" style={{ fontFamily: "rubik" }}>
+    
+      <img src={Headerbackground} className="w-full h-56 absolute top-0 z-10" />
+
+    
+      <div className="text-center inset-0 flex items-center justify-center">
+        <h1 className="text-center w-full top-72 md:top-[17%] text-[25vw] md:text-[200px] lg:text-[250px] md:py-20 z-10">
+          {title}
+          <h1 className="md:mt-10">
+            {subtitle && <TextScramble phrases={[subtitle]} />}
+          </h1>
+        </h1>
       </div>
-      <h1 className="text-center w-full absolute top-72 md:top-[17%] text-[25vw] md:text-[200px] lg:text-[250px] md:py-20 z-10" style={{ fontFamily: 'okami' }}>{title}
-        <h1 className=" md:mt-10">{subtitle && <TextScramble phrases={[subtitle]} />}</h1>
-      </h1>
-      {/* <h1 className="text-white text-6xl absolute top-[25rem] ml-[43rem] text-center text-proshowcard animate animate-pulse text-[40px] md:text-[100px] z-10" style={{ fontFamily: "dynalight", color: "#3A0A6E" }}>'25</h1> */}
+
+      <div className="halftone"></div>
+
+      <div className="relative w-full z-20">
+        <img src={Headerbackground2} className="w-full h-80 absolute bottom-0 z-10" />
+        <div className="absolute w-full bg-black xl:h-[148px] md:h-[160px] h-[164px] bottom-0 overflow-hidden rotate-[3deg] -ml-1"></div>
+        <div className="absolute w-full bg-black h-[140px] bottom-0 overflow-hidden"></div>
+      </div>
     </div>
   );
 }

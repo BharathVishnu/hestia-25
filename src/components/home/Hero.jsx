@@ -1,36 +1,21 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
-import DottedLine from "./DottedLine";
-import HomeMarque from "./HomeMarque";
+import React from 'react'
+import '../../styles/NewHero.css'
+import Headerbackground from "../../assets/images/hero/background.webp"
+import Headerbackground2 from "../../assets/images/hero/background2.webp"
 
-import { LoaderContext } from "../../context/loader";
-import "../../styles/hero.css";
-import TextScramble from "./TextScramble";
-/**
- * Render a hero section with a title.
- * @function
- * @param {Object} props - The component props.
- * @param {string} props.title - The title to display in the hero section.
- * @param {string} [props.textSize="330px"] - The font size of the title.
- * @param {number} props.keyC - The unique key for the component instance.
- * @returns {JSX.Element} The JSX element representing the hero section.
- */
-function Hero({ title, subtitle, keyC }) {
-
-
+const Hero = () => {
   return (
-    <div className="hero-section w-full relative flex flex-col items-center">
-      <div
-        className="pl-[2%] md:pl-[1%]  grid-container w-full h-[480px] md:h-[400px] max-h-screen overflow-y-hidden"
-        ref={heroSectionRef}
-      >
-        {renderGridItems()}
-      </div>
+    <div className='section relative min-h-screen' style={{ fontFamily: 'rubik' }}>
+      <img src={Headerbackground} className='w-full h-80 absolute z-10' />
 
+      <div className="text-center absolute inset-0 flex items-center justify-center">
+        <h1 className='text-7xl md:text-9xl lg:text-[160px] z-20 absolute'>HESTIA</h1>
+      </div>
+      <div className='halftone'></div>
+      <img src={Headerbackground2} className='w-full h-80 absolute z-10 -bottom-16' />
+      <div className="absolute w-full bg-black h-[158px] -bottom-16 rotate-3 "></div>
     </div>
-  );
+  )
 }
 
-export default Hero;
+export default Hero
