@@ -10,7 +10,6 @@ const Hero = () => {
 
       <div className="text-center absolute inset-0 flex items-center justify-center">
         <h1 className='text-7xl md:text-9xl lg:text-[160px] z-20 absolute'>HESTIA</h1>
-
       </div>
       <div className='halftone'></div>
       <img src={Headerbackground2} className='w-full h-80 absolute z-10 -bottom-16' />

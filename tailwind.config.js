@@ -20,6 +20,7 @@ export default {
       bungee: ["Bungee"],
       poppins: ["Poppins"],
       rubik: ["rubik"],
+      rubikfade:["rubikfade"],
     },
   },
   plugins: [],

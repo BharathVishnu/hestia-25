@@ -22,23 +22,23 @@ import Hero from "../../components/home/Hero.jsx";
 
 
 const HomePage = () => {
-  const [questions, setQuestions] = useState([]);
-  const { showDialog } = useContext(DialogPopup);
-  const [firstTimeUser, setFirstTimeUser] = useState(false);
+  // const [questions, setQuestions] = useState([]);
+  // const { showDialog } = useContext(DialogPopup);
+  // const [firstTimeUser, setFirstTimeUser] = useState(false);
 
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/api/contact/faq`);
-        const data = await response.json();
-        setQuestions(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchQuestions = async () => {
+  //     try {
+  //       const response = await fetch(`${BASE_URL}/api/contact/faq`);
+  //       const data = await response.json();
+  //       setQuestions(data.results);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchQuestions();
-  }, []);
+  //   fetchQuestions();
+  // }, []);
 
 
 
