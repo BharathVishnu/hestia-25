@@ -29,7 +29,7 @@ function Navbar() {
     });
   };
 
-  const smallScreen = useMediaQuery({maxWidth:"640px"})
+  const smallScreen = useMediaQuery({maxWidth:"900px"})
   return (
     <div className="flex bg-transparent pt-8 py-6 bg-opacity-5 justify-center items-center absolute top-12 w-full px-5 z-[100] font-Geomanist ">
       <div className="flex justify-between min-w-full bg-primary-dark rounded-md lg:bg-transparent px-2 lg:w-[93%] overflow-x-auto overflow-y-hidden lg:px-10">
@@ -50,7 +50,7 @@ function Navbar() {
               onMouseEnter={() => setHovered(key)}
               onMouseLeave={() => setHovered(null)}
             >
-              <Link className="text-sm lg:text-xl mx-2 lg:text-md uppercase font-bold p-2 relative z-10" to={path}  style={{ fontFamily: 'okami' }}>
+              <Link className="text-sm lg:text-xl mx-2 lg:text-md uppercase font-bold p-2 relative z-10" to={path}  style={{ fontFamily: 'rubik' }}>
                 {link}
               </Link>
               {
@@ -80,8 +80,8 @@ function Navbar() {
                 </>:<>
                 {hovered === key && (
                 <motion.svg
-                  width="100"
-                  height="120"
+                  width="140"
+                  height="140"
                   viewBox="0 0 500 500"
                   className="absolute -top-4 ml-8"
                   initial={{ opacity: 0 }}

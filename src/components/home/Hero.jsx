@@ -12,7 +12,7 @@ const Hero = () => {
       </div>
       <div className='halftone'></div>
       <img src={Headerbackground2} className='w-full h-80 absolute z-10 -bottom-16' />
-      <div className="absolute w-full bg-black h-[160px] -bottom-16"></div>
+      <div className="absolute w-full bg-black h-[160px] -bottom-16 rotate-[3deg] "></div>
     </div>
   )
 }
