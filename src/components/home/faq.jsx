@@ -19,12 +19,12 @@ export default function FAQSection() {
       className="max-screen mx-auto py-12 px-6 text-white text-center bg-cover bg-center" 
       style={{ backgroundImage: `url(${faqbg})` }}
     >
-      <h2 className="text-6xl md:text-5xl font-bold mb-10 tracking-wide uppercase font-['Rubik Vinyl']">FAQs</h2>
+      <h2 className="text-8xl md:text-9xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
       <div className="space-y-6">
         {faqs.map((faq, index) => (
           <div key={index} className="border-t border-white pt-6">
             <button
-              className="w-full flex justify-between items-center text-2xl md:text-xl font-bold uppercase tracking-wide py-4 px-6  hover:bg-opacity-100 transition-all"
+              className="w-full flex justify-between items-center text-2xl md:text-[64px] font-bold uppercase tracking-wide py-4 px-6  hover:bg-opacity-100 transition-all"style={{ fontFamily: 'Poppins' }}
               onClick={() => toggleFAQ(index)}
             >
               <span className="flex items-center gap-3 pl-10 md:pl-5">
@@ -32,7 +32,7 @@ export default function FAQSection() {
               </span>
               <span className="text-3xl md:text-2xl transition-transform">{openIndex === index ? "▲" : "▼"}</span>
             </button>
-            {openIndex === index && <p className="mt-4 text-gray-300 text-lg md:text-base px-6">{faq.answer}</p>}
+            {openIndex === index && <p className="mt-4  text-2xl md:text-[42px] px-6">{faq.answer}</p>}
           </div>
         ))}
       </div>
