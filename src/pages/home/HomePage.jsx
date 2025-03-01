@@ -16,7 +16,7 @@ import { DialogPopup } from '../../context/dialog.jsx';
 import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
 import { UserContext } from "../../context/user.jsx";
-
+import Faq from "../../components/home/faq.jsx";
 
 const HomePage = () => {
   const [questions, setQuestions] = useState([]);
@@ -45,6 +45,7 @@ const HomePage = () => {
           <Carousel />
           <PastEvents/>
           <Carousel />
+          <Faq />
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />
