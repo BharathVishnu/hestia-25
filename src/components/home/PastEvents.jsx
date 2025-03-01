@@ -37,7 +37,7 @@ const PastEvents = () => {
       images={[img1, img2, img3, img4, img5, img6, img7, img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25,img26,img27,img28]}
     >
       <section className="grid h-screen w-full place-content-center bg-black">
-        <p className="flex justify-center gap-2 font-bold uppercase">
+        <p className="flex justify-center gap-2 font-bold uppercase z-50">
           <span className="text-white text-4xl md:text-8xl text-center" style={{ fontFamily: 'okami' }}>EXPLORE HESTIA</span>
         </p>
       </section>
@@ -107,7 +107,7 @@ const MouseImageTrail = ({
     animate(
       selector,
       { opacity: [1, 0] },
-      { ease: "linear", duration: 0.5, delay: 5 }
+      { ease: "linear", duration: 0.1, delay: 1 }
     );
 
     imageRenderCount.current++;
@@ -118,7 +118,7 @@ const MouseImageTrail = ({
       {children}
       {images.map((img, index) => (
         <img
-          className="pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-black bg-neutral-900 object-cover opacity-0"
+          className="z-200 pointer-events-none absolute left-0 top-0 h-48 w-auto rounded-xl border-2 border-black bg-neutral-900 object-cover opacity-0"
           src={img}
           alt={`Event Image ${index}`}
           key={index}
