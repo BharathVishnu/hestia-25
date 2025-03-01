@@ -44,7 +44,7 @@ const HomePage = () => {
 
   return (
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
-          <MainHero title="Hestia" />
+          <MainHero title="HESTIA" />
           <Carousel />
           <EventBanner/>
           <Events/>
