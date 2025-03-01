@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "../../styles/hero.css";
 import "../../styles/carousel.css";
 
-import logoHestia from "../../assets/icons/logo_hestia.png";
+import logoHestia from "../../assets/images/hero/logo.png";
 // Reusable Text Component
 const MarqueeText = () => (
   <span className="text-lg md:text-2xl font-bold" style={{ fontFamily: 'okami'}}>
@@ -21,7 +21,7 @@ function Carousel() {
   return (
     <div className="overflow-hidden w-full">
       <motion.div
-        className="flex w-max gap-10 whitespace-nowrap"
+        className="flex w-max gap-0 whitespace-nowrap"
         initial={{ x: 0 }}
         animate={{ x: "-50%" }} 
         transition={{
@@ -32,7 +32,7 @@ function Carousel() {
         }}
       >
         {[...Array(2)].map((_, index) => (
-          <div key={index} className="flex gap-8 md:gap-10">
+          <div key={index} className="flex">
             <MarqueeText />
             <MarqueeLogo />
             <MarqueeText />
