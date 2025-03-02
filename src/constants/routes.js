@@ -29,3 +29,4 @@ export const REFUND_POLICY = "/refundpolicy";
 export const PRICING = "/pricing";
 export const SHIPPING = "/shipping"
 export const ABOUT_US = "/about-us"
+export const PROSHOW_BOOKING = "/proshow/booking/:category"
