@@ -32,7 +32,7 @@ const Merchs = () => {
             <h2 className="2xl:text-5xl xl:text-4xl lg:text-3xl py-5 font-bold uppercase text-black " style={{ fontFamily: 'Rubikvinyl' }}>T-SHIRT</h2>
             <button 
               style={{clipPath: "polygon(0 0, 100% 0, 100% 50%, 90% 100%, 0% 100%)", width: "100%"}} 
-              className="absolute bottom-[-40px] left-0 bg-[#720A08] text-white 2xl:text-2xl xl:text-xl lg:text-xl  py-2 font-bold uppercase flex items-center justify-start gap-48 pl-5 pr-5"
+              className="absolute bottom-[-40px]  bg-[#720A08] text-white  font-semibold  2xl:py-4 xl:py-3 lg:py-2  uppercase flex items-center justify-start gap-32 md:gap-48 pl-5 pr-5"
             >
               CHECK IT OUT <span><img src={arrow} alt="arrow" /></span>
             </button>
