@@ -6,7 +6,7 @@ function EventCard({ event, index ,img,onClick}) {
   return (
     <div className="h-auto w-auto flex flex-col gap-0 group">
     <div
-      className={`p-2 w-56 md:w-full h-auto flex flex-col justify-between hover:bg-white  hover:border-white transition-all duration-300
+      className={`p-2 w-full md:w-full h-auto flex flex-col justify-between hover:bg-white  hover:border-white transition-all duration-300
         ${index % 2 === 0 ? "border-white border-4" : "border-[#720A08] border-2"}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
