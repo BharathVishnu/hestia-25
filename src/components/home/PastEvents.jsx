@@ -1,5 +1,6 @@
 import { useAnimate } from "framer-motion";
 import React, { useRef } from "react";
+
 import img1 from "../../assets/images/pastEvents/img1.jpg"
 import img4 from "../../assets/images/pastEvents/img4.jpg"
 import img6 from "../../assets/images/pastEvents/img6.jpg"
