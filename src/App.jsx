@@ -16,6 +16,7 @@ import { UserContext } from "./context/user.jsx";
 import { getUserDetailsAPI } from "./services/user";
 import { campusAmbassodorAPI } from "./services/campusAmbassadorAPI.js";
 import Footer from "./components/footer/Footer.jsx";
+import Proshowbooking from "./pages/proshow/Proshowbooking.jsx";
 //import Sponsor from "./pages/sponsors/Sponsor.jsx";
 
 function RequireAuth() {
@@ -151,6 +152,10 @@ function App() {
               path={ROUTES.SHIPPING}
               element={<Pages.Shipping />}
               exact
+            />
+            <Route path = {ROUTES.PROSHOW_BOOKING}
+            element={<Proshowbooking />}
+            exact 
             />
           </Routes>
 
