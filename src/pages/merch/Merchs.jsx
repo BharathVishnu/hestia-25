@@ -4,12 +4,12 @@ import shirt2 from "../../assets/images/shirt2.png";
 import shirt3 from "../../assets/images/shirt3.png";
 import arrow from "../../assets/images/Arrow 1.svg";
 import Carousel from "../../components/home/HeroCarousel";
-import MainHero from "../../components/home/MainHero.jsx";
+import Hero from "../../components/home/Hero.jsx";
 
 const Merchs = () => {
   return (
     <div className="h-auto flex flex-col w-screen bg-black text-white">
-      <MainHero title="MERCHANDISE" />
+      <Hero title="MERCHANDISE" />
       <Carousel />
       
       <div className="flex flex-col items-center bg-[url(/src/assets/images/faqbg.png)] py-24">
