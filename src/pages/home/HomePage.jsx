@@ -50,6 +50,7 @@ const HomePage = () => {
           <HeroCarousel  />
           <EventBanner/>
           <Events/>
+          <PastEvents/>
           <Faq />
           {/* <CheckoutCarousel/> */}
           {/* <PastEvents/>

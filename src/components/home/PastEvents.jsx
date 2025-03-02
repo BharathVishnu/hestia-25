@@ -39,7 +39,7 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
 
 const PastEvents = () => {
   return (
-    <div className="relative w-full h-screen bg-black flex items-center justify-center">
+    <div className="relative w-full h-screen  flex items-center justify-center">
       {<ScrollImageTrail images={images} />}
       <span className ="sub-title" style={{  
         display: "inline-block", 
@@ -52,7 +52,7 @@ const PastEvents = () => {
         WebkitTextStroke: "1px white",
         fontWeight:"bolder",
         mixBlendMode: "exclusion",
-        backgroundColor: "black",
+        backgroundColor: "transparent",
           }}>
             HESTIA THROUGH THE AGES.
       </span>
