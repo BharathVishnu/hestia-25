@@ -1,177 +1,88 @@
-import React, { useState, useEffect } from "react";
-import ProshowCard from "../events/ProshowCard";
-import bg from "../../assets/images/Events/bg.svg"
-import { BASE_URL } from "../../constants/urls";
-import "../../styles/home.css";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import bg from "../../assets/images/bg_proshow.png"
+import pro1 from '../../assets/images/pro1.png'
+import prb1 from '../../assets/images/imageyellow.png'
+import pro2 from '../../assets/images/pro2.png'
+import pro3 from '../../assets/images/pro3.png'
+import '../../styles/proshow.css'
 
-function Proshow() {
-    const [proshowData, setProshowData] = useState([]);
+function App() {
+  const [count, setCount] = useState(0)
 
-    useEffect(() => {
-        const fetchProshowData = async () => {
-            try {
-                const response = await fetch(
-                    BASE_URL + '/api/events/all/'
-                );
-                const data = await response.json();
-                setProshowData(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchProshowData();
-    }, []);
 
-    return (
-        <div className="hero-section mt-16 flex flex-col justify-center items-center w-full max-w-screen">
-            <div className="flex flex-row justify-center px-2">
-                <span className="text-[85px] md:text-[180px]" style={{ fontFamily: 'CharlieDotted', color: '#741BD4' }}>PRO</span>
-                <span className="text-[85px] md:text-[180px]" style={{ fontFamily: 'CharlieDotted', color: '#FBF0C2' }}>SHOWS</span>
-            </div>
-            <div className="pt-12 w-full flex flex-col">
-                {/* {proshowData.results && proshowData.results.map((proshow, index) => { */}
-                {/* if (proshow.event_category === "PR") {
-                        return ( */}
-                <div className="w-full" >
-                    {/* <ProshowCard
-                                    index={index}
-                                    title={proshow.title}
-                                    img={proshow.image}
-                                    date={new Date(proshow.event_start).toLocaleDateString("en-US", { month: "long", day: "numeric" })}
-                                /> */}
-                    <div
-                        className=" mb-12 w-full flex flex-col md:flex-row justify-center items-center px-1 ">
+        return (
+    <div style={{ backgroundImage: `url(${bg})`, height: "auto", 
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat"}}>
 
-                        <div className=" w-[350px]  max-w-[350px] h-[250px]  max-h-[500px] md:w-[800px]  md:max-w-[800px] md:h-[500px]  md:max-h-[500px] ">
-                            <video className="w-fit h-fit shadow-inner shadow-slate-100 rounded-xl   border-2 border-violet-800 border-opacity-20" loop autoPlay muted >
-                                <source src="https://hestia24backend.s3.amazonaws.com/videos/IMG_3046.MP4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <div className=" md:ml-4 -mt-5 flex flex-col justify-center  items-center ">
-                            <h1
-                                className="p-0  m-0 text-[40px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                ANTARA MITRA
-                            </h1>
+        <div className="container mx-auto px-4 py-8">
+        <h1 className="text-center text-4xl font-bold mb-8">PROSHOWS</h1>
 
-                            <h1
-                                className="-mt-7 animate-pulse  text-[45px] md:text-[80px] text-proshowcard"
-                                style={{ fontFamily: "dynalight", color: "#3A0A6E" }}
-                            >
-                                {/* {`${month} ${formatDay(parseInt(day))}`} */}
-                                May 5th
-                            </h1>
-                        </div>
 
-                    </div>
-                    <div
-                        className="  mb-12 w-full flex flex-col md:flex-row justify-center items-center px-1 ">
-                        <div className="hidden  md:ml-4 -mt-5 md:flex flex-col  items-center ">
-                            <h1
-                                className="p-0  m-0 text-[40px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                MC COUPER
-                            </h1>
-                            <h1
-                                className="-mt-10 text-[40px] md:text-[40px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                &
-                            </h1>
-                            <h1
-                                className="-mt-10 text-[40px] md:text-[80px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                MALAYALI MONKEYS
-                            </h1>
-                            <h1
-                                className="-mt-16 animate-pulse  text-[45px] md:text-[80px] text-proshowcard"
-                                style={{ fontFamily: "dynalight", color: "#3A0A6E" }}
-                            >
-                                {/* {`${month} ${formatDay(parseInt(day))}`} */}
-                                May 4th
-                            </h1>
-                        </div>
-                        <div className=" w-[350px]  max-w-[350px] h-[250px]  max-h-[500px] md:w-[800px]  md:max-w-[800px] md:h-[500px]  md:max-h-[500px] ">
-                            <video className="w-fit h-fit shadow-inner shadow-slate-100 rounded-xl   border-2 border-violet-800 border-opacity-20" loop autoPlay muted >
-                                <source src="https://hestia24backend.s3.amazonaws.com/videos/IMG_3049.MP4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <div className="md:hidden  md:ml-4 -mt-5 flex flex-col justify-center items-center ">
-                            <h1
-                                className=" text-[40px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                MC COUPER
-                            </h1>
-                            <h1
-                                className="-mt-5 text-[30px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                &
-                            </h1>
-                            <h1
-                                className="-mt-7 text-[40px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            >
-                                {/* {title} */}
-                                MALAYALI MONKEYS
-                            </h1>
-                            <h1
-                                className="-mt-7 animate-pulse  text-[45px] md:text-[80px] text-proshowcard"
-                                style={{ fontFamily: "dynalight", color: "#3A0A6E" }}
-                            >
-                                {/* {`${month} ${formatDay(parseInt(day))}`} */}
-                                May 4th
-                            </h1>
-                        </div>
-
-                    </div>
-                    <div
-                        className="  mb-12 w-full flex flex-col md:flex-row justify-center items-center px-1 ">
-
-                        {/* <div className=" w-[350px]  max-w-[350px] h-[250px]  max-h-[500px] md:w-[800px]  md:max-w-[800px] md:h-[500px]  md:max-h-[500px] ">
-                            <video className="w-fit h-fit shadow-inner shadow-slate-100 rounded-xl   border-2 border-violet-800 border-opacity-20" loop autoPlay muted >
-                                <source src="https://hestia24backend.s3.amazonaws.com/videos/IMG_3052.MP4" type="video/mp4" />
-                            </video>
-                        </div> */}
-                        {/* <div className=" md:ml-4 -mt-5 flex flex-col  items-center ">
-                            <h1
-                                className="p-0  m-0 text-[40px] md:text-[100px]"
-                                style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}
-                            > */}
-                                {/* {title} */}
-                                {/* GOWWLI */}
-                            {/* </h1>
-
-                            <h1
-                                className="-mt-7 animate-pulse  text-[45px] md:text-[80px] text-proshowcard"
-                                style={{ fontFamily: "dynalight", color: "#3A0A6E" }}
-                            > */}
-                                {/* {`${month} ${formatDay(parseInt(day))}`} */}
-                                {/* May 3rd
-                            </h1>
-                        </div> */}
-
-                    </div>
+    <div className="space-y-8">
+{/*Event1*/}
+        <div className="flex flex-col md: flex-row ">
+            
+            <div className='relative mb-4 md:mb-0'>
+                <img
+                    src={pro1}
+                    className="w-[400px] h-[200px] 
+                    flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
+                <img
+                    src={prb1}
+                    className="w-[400px] h-[200px] 
+                    flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
+                
+                <div className="absolute bottom-4 md:bottom-auto md:top-[60px] md:right-[-185px] text-right right-4"> 
+                <div><h2 className="text-lg font-bold">DJ STRELLA</h2></div>
+                <div className='md:absolute md:right-[-50px]'><h3 className="text-sm ">04-04-2023</h3></div>
                 </div>
-                {/* );
-                    // } else { */}
-                {/*     return null;
-                     } */}
-                {/* })} */}
+            </div>  
+        </div>
+        
+{/*Event2*/}
+        <div className="flex flex-col md:flex-row-reverse">
+            <div className='relative mb-4 md:mb-0'>
+            
+                <img
+                    src={pro2} 
+                    className="w-[400px] h-[200px] flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
+                    <img
+                    src={prb1}
+                    className="w-[400px] h-[200px] 
+                    flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
+                    <div className="absolute bottom-4 right-4 text-right md:right-99 md:top-20 md:text-left whitespace-nowrap">
+                    <div><h2 className="text-lg font-bold " >DJ STRELLA</h2></div>
+                    <div className='md:absolute md:left-[-60px] '><h3 className="text-sm">03-04-2023</h3></div>
+                </div>
+        
             </div>
         </div>
 
-    );
-}
+{/*Event3*/}
+        
+        <div className="flex flex-col md: flex-row">
+            <div className='relative mb-4 md:mb-0'>
+                <img
+                    src={pro3}
+                    className="w-[400px] h-[200px] flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
+                    <img
+                    src={prb1}
+                    className="w-[400px] h-[200px] 
+                    flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
+                    <div className="absolute bottom-4 md:bottom-auto md:top-[60px] md:right-[-185px] text-right right-4"> 
+                    <div><h2 className="text-lg font-bold">DJ STRELLA</h2></div>
+                    <div className='md:absolute md:right-[-50px]'><h3 className="text-sm ">04-04-2023</h3></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
 
-export default Proshow;
+    )
+
+}    
+export default App
