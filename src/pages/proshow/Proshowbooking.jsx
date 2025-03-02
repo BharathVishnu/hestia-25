@@ -6,7 +6,7 @@ import ProshowbookingCard from '../../components/Proshow/ProshowbookingCard';
 
 const Proshowbooking = () => {
     return (
-        <div className='bg-black'>
+        <div className=''>
             <Hero title={"Pro"} secondtext={"show"} color={"#720A08"} />
             <div className='mt-10'>
                 <Carousel />

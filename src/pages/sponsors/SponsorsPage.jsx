@@ -5,13 +5,16 @@ import Carousel from "../../components/home/HeroCarousel";
 import MainHero from "../../components/home/MainHero.jsx";
 import React, { useState } from "react";
 import Card from "../../components/events/Card.jsx";
+import Hero from "../../components/home/Hero.jsx";
 
 function Events() {
   
 
   return (
-    <div className="h-auto flex flex-col gap-4 items-center w-screen">
-      <MainHero title="SPONSORS" />
+    <div className="h-auto ">
+      <Hero title="SPONSORS" />
+      <div className="mt-10"></div>
+      <div className="flex flex-col gap-4 items-center w-screen">
       <Carousel />
       <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">
         <div className="bg-[#720A08] absolute right-1 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
@@ -66,6 +69,7 @@ function Events() {
             <div className="bg-[#720A08] absolute left-0 top-0 w-1/2 h-1/2"></div>
             <div className="bg-white absolute right-1 bottom-0 w-1/2 h-1/2"></div>
       </div>
+    </div>
     </div>
   );
 }

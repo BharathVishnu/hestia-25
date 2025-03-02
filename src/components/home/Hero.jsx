@@ -21,9 +21,9 @@ const Hero = ({ title, secondtext, upper, color, desc }) => {
       </div>
 
       <div className='halftone'></div>
-      <img src={Headerbackground2} className='w-full h-40 absolute z-10 -bottom-16' />
-      {/* <div className="absolute w-full bg-black xl:h-[10px] md:h-[20px] h-[20px] bottom-0 overflow-hidden rotate-[3deg] -ml-1"></div> */}
-      <div className="absolute w-full bg-black h-[20px] bottom-0 overflow-hidden"></div>
+      <img src={Headerbackground2} className='w-full h-40 absolute z-20 -bottom-16' />
+      {/* <div className="absolute w-full bg-[#1c1b22] xl:h-[10px] md:h-[20px] h-[20px] bottom-0 overflow-hidden rotate-[3deg] -ml-1"></div> */}
+      <div className="absolute w-full bg-[#1c1b22] h-[20px] bottom-0 overflow-hidden z-10"></div>
     </div>
   )
 }
