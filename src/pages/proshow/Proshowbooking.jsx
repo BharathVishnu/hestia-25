@@ -74,12 +74,12 @@ const Proshowbooking = () => {
 
                 </div>
                 <div className='flex w-screen justify-center mt-20' style={{ fontFamily: 'rubik' }}>
-                    <div className='bg-[#720A08] md:w-80 w-40 h-16'>
+                    <div className='bg-[#720A08] md:w-80 w-40  h-16'>
                     </div>
-                    <div className='bg-white absolute mt-5 ml-5 md:w-80 w-56 h-16 flex justify-center items-center z-10'>
+                    <div className='bg-white absolute mt-5 ml-5 md:w-80 w-40 h-16 flex justify-center items-center z-10'>
                         <h1 className='text-black  text-2xl'>Price : <span className='text-[#FBAD44] text-2xl font-bold font-poppins'>300rs</span></h1>
                     </div>
-                    <div className='border border-black p-2 w-56 h-16 z-20 absolute -border-r-[22px] mt-16 ml-80 ' style={{
+                    <div className='border border-black p-2 w-40 h-16 z-20 absolute -border-r-[22px] mt-16 md:ml-80 ml-40 ' style={{
                         clipPath: "polygon(0 0, 100% 0, 100% 45%,85% 100%, 0 100%)",
                     }}>
                         <div
