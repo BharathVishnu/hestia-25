@@ -12,7 +12,7 @@ function Navbar() {
     ["Tickets", "/"],
     ["About", "/"],
     ["Events", "/events"],
-    ["Sponsors", "/merchandise"],
+    ["Sponsors", "/sponsors"],
   ];
   const { tokenState } = useContext(UserContext);
   const [hovered, setHovered] = useState(null);
