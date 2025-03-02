@@ -22,9 +22,9 @@ import { BASE_URL } from "../../constants/urls.js";
 import { UserContext } from "../../context/user.jsx";
 import { getUserDetailsAPI } from "../../services/user.js";
 import { registerMerchAPI } from "../../services/registration.js";
-import { DialogPopup } from "../../context/dialog";
-import { PopUpContext } from "../../context/popup";
-import { ModalContext } from "../../context/modal";
+import { DialogPopup } from "../../context/dialog.jsx";
+import { PopUpContext } from "../../context/popup.jsx";
+import { ModalContext } from "../../context/modal.jsx";
 import gatewayResolver from "../../utils/razor-pay-utils.js";
 
 function Merchandise({ title, subtitle, keyC }) {
@@ -276,7 +276,7 @@ function Merchandise({ title, subtitle, keyC }) {
         <p className="text-md md:text-5xl mt-0 md:mt-10" style={{ fontFamily: 'Bungee', color: '#FBF0C2', letterSpacing: '0.2em' }}>Claim your <span className="text-[#6913C7]">merchs</span> now !!</p>
       </div>
       <div className="relative -mt-48 md:-mt-0  flex flex-col justify-center items-center h-auto w-screen bg-[#6913C7] grid-background">
-        <div className="absolute top-[-4%] md:top-[-9%] lg:top-[-22%] right-16 md:right-72 w-12 h-12 md:3-36 md:h-36 lg:w-48 lg:w-48">
+        <div className="absolute top-[-4%] md:top-[-9%] lg:top-[-22%] right-16 md:right-72 w-12 h-12 md:3-36 md:h-36 lg:w-48 ">
           <img className="hidden md:block" src={arrow} alt="arrow"></img>
         </div>
         <div className="  flex justify-center items-center md:items-end  w-[400px] md:w-[800px] h-[300px] md:h-[600px]  mt-[-50px] ">

@@ -76,7 +76,7 @@ function App() {
               element={<Pages.CampusAmbassador />}
               exact
             />
-            
+            <Route path={ROUTES.MERCHS} element={<Pages.Merchs />} exact />
             <Route path={ROUTES.MERCHANDISE} element={<Pages.Merchandise />} exact />
             {/* <Route path={ROUTES.SPONSORS} element={<Pages.Sponsors />} exact /> */}
             <Route path={ROUTES.SPONSORS} element={<SponsorsPage />} />
