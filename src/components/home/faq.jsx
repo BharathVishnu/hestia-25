@@ -19,7 +19,7 @@ export default function FAQSection() {
       className="max-screen mx-auto py-12 px-6 text-white text-center bg-cover bg-center" 
       style={{ backgroundImage: `url(${faqbg})` }}
     >
-      <h2 className="text-8xl md:text-9xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
+      <h2 className="text-6xl md:text-7xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
       <div className="space-y-6">
         {faqs.map((faq, index) => (
           <div key={index} className="border-b-4 border-white pt-6">
@@ -28,7 +28,7 @@ export default function FAQSection() {
               onClick={() => toggleFAQ(index)}
             >
               <span className="flex items-center gap-3 pl-10 md:pl-5">
-                <span className="text-yellow-400 2xl:text-3xl xl:text-2xl lg:text-xl">★</span> {faq.question}
+                <span className="text-yellow-400 2xl:text-xl xl:text-lg lg:text-md">★</span> {faq.question}
               </span>
               <span className="2xl:text-3xl xl:text-2xl lg:text-xl transition-transform">{openIndex === index ? "▲" : "▼"}</span>
             </button>
