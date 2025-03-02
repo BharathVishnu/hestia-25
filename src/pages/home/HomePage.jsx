@@ -17,6 +17,10 @@ import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
 import { UserContext } from "../../context/user.jsx";
 import Faq from "../../components/home/faq.jsx";
+import EventBanner from "../../components/home/EventBanner.jsx";
+import Hero from "../../components/home/Hero.jsx";
+
+
 
 const HomePage = () => {
   const [questions, setQuestions] = useState([]);
@@ -41,11 +45,13 @@ const HomePage = () => {
 
   return (
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
-          <MainHero title={"Hestia'25"} subtitle={""} keyC={2} />
-          <Carousel />
-          <PastEvents/>
+          <Hero />
           <Carousel />
           <Faq />
+          <EventBanner/>
+          <Events/>
+          {/* <PastEvents/>
+          <Carousel /> */}
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />
