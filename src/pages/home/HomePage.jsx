@@ -47,9 +47,10 @@ const HomePage = () => {
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
           <Hero />
           <Carousel />
-          <Faq />
+          
           <EventBanner/>
           <Events/>
+          <Faq />
           {/* <PastEvents/>
           <Carousel /> */}
           {/* <About /> */}
