@@ -28,7 +28,7 @@ export default function FAQSection() {
               onClick={() => toggleFAQ(index)}
             >
               <span className="flex items-center gap-3 pl-10 md:pl-5">
-                <span className="text-yellow-400 2xl:text-xl xl:text-lg lg:text-md">★</span> {faq.question}
+                <span className="text-yellow-400 2xl:text-2xl xl:text-l lg:text-md">★</span> {faq.question}
               </span>
               <span className="2xl:text-3xl xl:text-2xl lg:text-xl transition-transform">{openIndex === index ? "▲" : "▼"}</span>
             </button>

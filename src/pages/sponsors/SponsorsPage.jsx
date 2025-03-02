@@ -1,142 +1,73 @@
-import DottedLine from '../../components/home/DottedLine'
-import HomeMarque from '../../components/home/HomeMarque'
-import "../../styles/hero.css"
-import "../../styles/home.css"
-import useFetch from '../../hooks/useFetch.js';
-import { BASE_URL } from '../../constants/urls.js';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Hero from '../../components/home/Hero.jsx';
 
-import pics from '../../assets/icons/logo_hestia.png'
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import Search from "../../components/events/Search.jsx";
+import Sort from "../../components/events/Sort.jsx";
+import Carousel from "../../components/home/HeroCarousel";
+import MainHero from "../../components/home/MainHero.jsx";
+import React, { useState } from "react";
+import Card from "../../components/events/Card.jsx";
 
+function Events() {
+  
 
-const SponsorPage = () => {
-
-  const { error, isPending, data: sponsors } = useFetch(BASE_URL + '/api/sponsors/all');
-
-  const spons_det = () => {
-    if (sponsors !== null) {
-      return sponsors.results.map((sponsor, index) => {
-
-        return (
-          <div key={index} className=' mt-16 md:mt-20 flex flex-col  gap-5 w-full'>
-            <p className='uppercase text-2xl text-center md:text-4xl tracking-widest font-semibold' style={{ fontFamily: 'Bungee', color: '#FBF0C2' }}>{sponsor.partnerType}</p>
-            <div className='pb-24' >
-              <Swiper
-                effect={'coverflow'}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={2}
-
-                initialSlide={1}
-                breakpoints={{
-                  720: {
-                    slidesPerView: 3
-                  },
-                  1024: { slidesPerView: 4 }, // Adjusted for screens larger than 720px
-                }}
-                coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: -100,
-                  modifier: 1,
-                  slideShadows: false,
-                }}
-                pagination={false}
-                modules={[EffectCoverflow, Pagination]}
-                className="mySwiper"
-              >
-                {sponsor?.cat?.map((items, keys) => {
-
-                  return (
-                    <SwiperSlide key={keys}>
-                      <div className="my-10 flex justify-center  ">
-                        <div className="h-[210px] bg-transparent border-2 rounded-lg flex flex-col justify-center items-center pt-3 md:w-[270px] xl:w-[350px] w-[250px] ">
-                          {!items.logo && <h1 style={{ fontFamily: 'Bungee', color: '#FBF0C2' }}>{items.name}</h1>}
-                          <a className='flex justify-center' href={items.website}> <img src={items.logo === null ? pics : items.logo} className="w-1/2 " alt={items.name} /></a>
-                         <p className='pt-5 md:pt-1 md:text-xl ' style={{fontFamily: 'azonix', color: '#FBF0C2'}}> {items.name} </p>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })}
-
-              </Swiper>
+  return (
+    <div className="h-auto flex flex-col gap-4 items-center w-screen">
+      <MainHero title="SPONSORS" />
+      <Carousel />
+      <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">
+        <div className="bg-[#720A08] absolute right-1 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
+        <div className="bg-white absolute right-16 bottom-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
+      </div>
+      <div className="flex flex-col justify-center items-center md:justify-center lg:items-start lg:justify-start mb-6 ml-0 md:ml-8 tracking-widest">
+            <div className="font-rubik font-bold text-2xl md:text-7xl z-0">
+                TITLE
             </div>
-
-          </div>
-        )
-      })
-    }
-  }
-
-  return (
-    <div className='grid-background flex flex-col bg-black text-white'>
-      <Hero title={"MEET OUR SPONSORS"} />
-      <div className='hero-section'>
-        {spons_det()}
+            <div className="font-poppins font-bold text-2xl md:text-7xl ml-0 lg:ml-48 w-auto p-2 md:p-4 mt-[-18px] md:mt-[-48px] text-black bg-[#720A08]">
+                SPONSORS
+            </div>
       </div>
-      {!sponsors && <div className='grid-background w-full h-64 flex justify-center items-center'>
-        <p className='text-5xl md:text-9xl animate-pulse' style={{ fontFamily: "CharlieDotted", color: "#FBF0C2" }}> REVEALING SOON</p>
-      </div>}
-      
+      {/* <div>
 
-    </div>
-  )
-}
-
-export default SponsorPage;
-/*import React, { useContext } from "react";
-import {BASE_URL} from '../../constants/urls.js';
-import { ModalContext } from "../../context/modal.jsx";
-import useFetch from "../../hooks/useFetch.js";
-
-import DottedLine from '../../components/home/DottedLine.jsx'
-import HomeMarque from '../../components/home/HomeMarque.jsx'
-import SponsorCard from '../../components/sponsor/SponsorCard.jsx'
-
-function SponsorsPage(props) {
-
-
-  const { error, isPending, data: sponsors } = useFetch(BASE_URL+'/api/sponsors/all/');
-
-  const {showState} = useContext(ModalContext);
-  const [show,setShow] = showState;
-  return (
-    <div className="w-full min-h-screen text-small">
-      <div className="w-full flex flex-col items-center justify-center">
-        { error && <div className="text-sm">{ error }</div> }
-        { sponsors?.results?.length>0 ?
-              <div className='flex flex-col bg-black text-white'>
-              <div className='flex flex-col w-full items-center justify-center h-64 mt-20'>
-                  <p className='text-[#741BD4] font-[bungee] tracking-widest text-lg lg:text-2xl xl:text-3xl lg:mt-4 font-semibold'>HESTIA 2024</p>
-                  <p className='uppercase text-7xl lg:text-8xl xl:text-9xl text-center mt-2' style={{ fontFamily: 'CharlieDotted',color:'#FBF0C2' }}>meet our sponsors</p>
-              </div>
-              <DottedLine/>
-              <HomeMarque/>
-              <DottedLine/>
-             {sponsors?.results?.map((sponser)=>{
-                return(
-                  <div className='w-full mt-10 flex flex-col mx-16 justify-center gap-5 '>
-                    <p className='uppercase text-2xl text-center md:text-4xl' style={{ fontFamily: 'Bungee',color:'#FBF0C2' }}>{sponser.partnerType}</p>
-                    <SponsorCard sponser={sponser}/>
-                  </div>
-                );
-              })}
-        </div>
-              :
-              ((!error && !show) && <p className='text-secondary-dark w-full text-sm text-center mb-5'>Revealing soon</p>)
-        }
+      </div> */}
+      <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">
+            <div className="bg-[#720A08] absolute left-16 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
+            <div className="bg-white absolute left-1 bottom-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
       </div>
-     
+      <div className="flex flex-col gap-4 relative w-screen h-4 md:h-8">
+            <div className="bg-[#720A08] absolute left-0 top-0 w-1/2 h-1/2"></div>
+            <div className="bg-white absolute right-1 bottom-0 w-1/2 h-1/2"></div>
+      </div>
+      <div className="mt-6 flex flex-col justify-end items-end text-right tracking-widest w-screen">
+            <div className="font-poppins font-bold text-2xl md:text-6xl p-1 w-12 md:w-36 text-center mr-32 md:mr-72 z-0 bg-[#720A08] text-black">
+                CO
+            </div>
+            <div className="font-rubik font-bold text-2xl md:text-6xl z-10 mt-[-14px]">
+              SPONSORS
+            </div>
+      </div>
+      {/* <div>
+
+      </div> */}
+      <div className="flex flex-col gap-4 relative w-screen h-4 md:h-8">
+            <div className="bg-[#720A08] absolute right-1 top-0 w-1/2 h-1/2"></div>
+            <div className="bg-white absolute left-0 bottom-0 w-1/2 h-1/2"></div>
+      </div>
+      <div className="mt-6 pl-0 md:pl-8 flex flex-col justify-start items-start text-right tracking-widest w-screen">
+            <div className="font-rubik font-bold text-2xl md:text-6xl p-1 w-auto text-left md:text-center z-10 text-white">
+                MERCH
+            </div>
+            <div className="font-poppins font-bold text-white bg-[#720A08] text-2xl md:text-6xl z-0 mt-[-24px] p-1 ml-12 md:ml-48 ">
+              SPONSORS
+            </div>
+      </div>
+      {/* <div>
+
+      </div> */}
+      <div className="flex flex-col gap-4 relative w-screen h-4 md:h-8 mb-12">
+            <div className="bg-[#720A08] absolute left-0 top-0 w-1/2 h-1/2"></div>
+            <div className="bg-white absolute right-1 bottom-0 w-1/2 h-1/2"></div>
+      </div>
     </div>
   );
 }
 
-export default SponsorsPage;
-*/
+export default Events;
