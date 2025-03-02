@@ -67,6 +67,7 @@ function App() {
       <div className=" overflow-x-hidden max-w-screen">
         <BrowserRouter>
           <Navbar />
+          
           {/* <PopUp popUp={popUp} /> */}
           <Routes>
             <Route path={ROUTES.HOME} element={<Pages.Home />} exact />
@@ -76,6 +77,7 @@ function App() {
               element={<Pages.CampusAmbassador />}
               exact
             />
+            
             <Route path={ROUTES.MERCHANDISE} element={<Pages.Merchandise />} exact />
             {/* <Route path={ROUTES.SPONSORS} element={<Pages.Sponsors />} exact /> */}
             <Route path={ROUTES.SPONSORS} element={<SponsorsPage />} />
