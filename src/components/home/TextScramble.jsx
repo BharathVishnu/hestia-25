@@ -64,7 +64,7 @@ function TextScramble({ phrases =null}){
   }, []); 
 
 
-  return <h1 className="w-full text text-center absolute top-24 md:top-[60%] pt-4 md:pt-8 text-[12px] md:text-[30px] " dangerouslySetInnerHTML={{ __html: text }} style={{ fontFamily: 'azonix',color:'#FBF0C2' }} />;
+  return <h1 className="w-full text text-center absolute top-24 md:top-[60%] pt-4 md:pt-8 text-[12px] md:text-[30px] " dangerouslySetInnerHTML={{ __html: text }} style={{ fontFamily: 'rubik',color:'#FBF0C2' }} />;
 };
 
 export default TextScramble;

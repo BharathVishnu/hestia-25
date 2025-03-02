@@ -6,13 +6,13 @@ import "../../styles/carousel.css";
 import logoHestia from "../../assets/images/hero/logo.png";
 // Reusable Text Component
 const MarqueeText = () => (
-  <span className="text-lg md:text-2xl font-bold" style={{ fontFamily: 'okami'}}>
+  <span className="text-lg md:text-4xl font-bold" style={{ fontFamily: 'rubik'}}>
     SOUTH INDIA'S LARGEST TECHNO CULTURAL FEST
   </span>
 );
 
 const MarqueeLogo = () => (
-  <div className="w-8" >
+  <div className="w-12" >
     <img src={logoHestia}/>
   </div>
 );

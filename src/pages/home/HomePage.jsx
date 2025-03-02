@@ -11,7 +11,8 @@ import FaQ from "../../components/faq/Faq.jsx";
 import { AlertBar } from "../../components/home/AlertBar.jsx";
 import { BASE_URL } from "../../constants/urls.js";
 import GetApp from "../../components/home/GetApp.jsx";
-import Carousel from "../../components/home/HeroCarousel.jsx";
+import HeroCarousel from "../../components/home/HeroCarousel.jsx"; 
+import CheckoutCarousel from "../../components/home/CheckoutappCarousel.jsx"; 
 import { DialogPopup } from '../../context/dialog.jsx';
 import { ModalContext } from "../../context/modal.jsx";
 import { PopUpContext } from "../../context/popup.jsx";
@@ -23,36 +24,36 @@ import Hero from "../../components/home/Hero.jsx";
 
 
 const HomePage = () => {
-  const [questions, setQuestions] = useState([]);
-  const { showDialog } = useContext(DialogPopup);
-  const [firstTimeUser, setFirstTimeUser] = useState(false);
+  // const [questions, setQuestions] = useState([]);
+  // const { showDialog } = useContext(DialogPopup);
+  // const [firstTimeUser, setFirstTimeUser] = useState(false);
 
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}/api/contact/faq`);
-        const data = await response.json();
-        setQuestions(data.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchQuestions = async () => {
+  //     try {
+  //       const response = await fetch(`${BASE_URL}/api/contact/faq`);
+  //       const data = await response.json();
+  //       setQuestions(data.results);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchQuestions();
-  }, []);
+  //   fetchQuestions();
+  // }, []);
 
 
 
   return (
     <div className=" w-full max-w-screen overflow-hidden h-full  " >
-          <Hero />
-          <Carousel />
-          
+          <MainHero title="Hestia" />
+          <HeroCarousel  />
           <EventBanner/>
           <Events/>
           <Faq />
+          {/* <CheckoutCarousel/> */}
           {/* <PastEvents/>
-          <Carousel /> */}
+          
           {/* <About /> */}
           {/* <Events /> */}
           {/* <Proshow />
