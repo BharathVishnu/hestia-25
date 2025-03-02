@@ -10,7 +10,7 @@ function Events() {
   
 
   return (
-    <div className="h-auto flex flex-col w-screen">
+    <div className="h-auto flex flex-col items-center w-screen">
       <MainHero title="MAJOR EVENTS" />
       <Carousel />
       <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">

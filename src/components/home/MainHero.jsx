@@ -32,12 +32,12 @@ function MainHero({ title, subtitle, keyC }) {
 
   return (
     <div
-      className="section relative min-h-screen overflow-hidden"
+      className="section relative min-h-screen overflow-hidden w-screen"
       style={{ fontFamily: "rubik" }}
     >
       <img
         src={Headerbackground}
-        className="w-full h-56 absolute top-0 z-10"
+        className="w-screen h-56 absolute top-0 z-10"
         alt="Background"
       />
 
