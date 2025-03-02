@@ -1,5 +1,5 @@
 import { useState } from "react";
-import faqbg from "/src/assets/images/faqbg.png"; // Adjust path if needed
+import faqbg from "/src/assets/images/faqbg.png"; 
 
 const faqs = [
   { question: "Are there any offers for Hestia '25?", answer: "Yes! We have exclusive discounts and early bird offers. Stay tuned for updates." },
@@ -22,17 +22,17 @@ export default function FAQSection() {
       <h2 className="text-8xl md:text-9xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
       <div className="space-y-6">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-t border-white pt-6">
+          <div key={index} className="border-b-4 border-white pt-6">
             <button
-              className="w-full flex justify-between items-center text-2xl md:text-[64px] font-bold uppercase tracking-wide py-4 px-6  hover:bg-opacity-100 transition-all"style={{ fontFamily: 'Poppins' }}
+              className="w-full flex justify-between items-center 2xl:text-4xl xl:text-3xl lg:text-2xl font-bold uppercase tracking-wide py-4 px-6  hover:bg-opacity-100 transition-all"style={{ fontFamily: 'Poppins' }}
               onClick={() => toggleFAQ(index)}
             >
               <span className="flex items-center gap-3 pl-10 md:pl-5">
-                <span className="text-yellow-400 text-3xl md:text-2xl">★</span> {faq.question}
+                <span className="text-yellow-400 2xl:text-3xl xl:text-2xl lg:text-xl">★</span> {faq.question}
               </span>
-              <span className="text-3xl md:text-2xl transition-transform">{openIndex === index ? "▲" : "▼"}</span>
+              <span className="2xl:text-3xl xl:text-2xl lg:text-xl transition-transform">{openIndex === index ? "▲" : "▼"}</span>
             </button>
-            {openIndex === index && <p className="mt-4  text-2xl md:text-[42px] px-6">{faq.answer}</p>}
+            {openIndex === index && <p className="mt-4   2xl:text-4xl xl:text-3xl lg:text-2xl px-6">{faq.answer}</p>}
           </div>
         ))}
       </div>
