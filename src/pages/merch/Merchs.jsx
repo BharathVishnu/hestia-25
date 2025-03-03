@@ -1,12 +1,12 @@
 import React from "react";
 
-
+import "../../styles/home.css";
 import Carousel from "../../components/home/HeroCarousel";
 import Hero from "../../components/home/Hero.jsx";
 import Mcard from "../../pages/merch/Merchcard.jsx";
 const Merchs = () => {
   return (
-    <div className="h-auto flex flex-col w-screen  text-white">
+    <div className="h-auto flex home flex-col w-screen  text-white">
       <Hero title="MERCHANDISE" />
       <div className="mt-10">
       <Carousel />
