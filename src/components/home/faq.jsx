@@ -20,7 +20,7 @@ export default function FAQSection() {
       className="max-screen mx-auto py-12 px-6 text-white text-center bg-cover bg-center font-poppins" 
       
     >
-      <h2 className="text-6xl md:text-7xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
+      <h2 className="text-6xl md:text-8xl font-bold mb-10 tracking-wide uppercase" style={{ fontFamily: 'Rubikvinyl' }}>FAQs</h2>
       <div className="space-y-6">
       {faqs.map((faq, index) => (
         <div
@@ -30,7 +30,7 @@ export default function FAQSection() {
           }`}
         >
           <button
-            className="w-full flex justify-between items-center 2xl:text-3xl xl:text-2xl lg:text-xl font-bold uppercase tracking-wide py-4 px-6 hover:bg-opacity-100 transition-all"
+            className="w-full flex justify-between items-center 2xl:text-4xl xl:text-3xl lg:text-2xl font-bold uppercase tracking-wide py-4 px-6 hover:bg-opacity-100 transition-all"
             style={{ fontFamily: "Poppins" }}
             onClick={() => toggleFAQ(index)}
           >
