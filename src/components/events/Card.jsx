@@ -28,7 +28,7 @@ function EventCard({ event, index ,img,onClick}) {
       </div>
     </div>
     <div onClick={onClick} className="bg-[#720A08] uppercase font-bold  w-full p-3 opacity-0 group-hover:opacity-100 flex flex-row justify-between" style={{clipPath:"polygon(0 0, 100% 0, 100% 59%, 82% 100%, 0 100%, 0% 50%)"}}>
-        Register Now
+        <h>Register Now</h><h className="text-md">→</h>
     </div>
     </div>
   );
