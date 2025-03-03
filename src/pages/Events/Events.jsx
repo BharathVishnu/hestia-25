@@ -6,9 +6,11 @@ import MainHero from "../../components/home/MainHero.jsx";
 import React, { useState } from "react";
 import Card from "../../components/events/Card.jsx";
 import Hero from "../../components/home/Hero.jsx";
+import "../../styles/home.css";
+
 function Events() {
   return (
-    <div className="h-auto">
+    <div className="home h-auto">
       <Hero title={"MAJOR"} secondtext={"EVENTS"} color={"#720A08"} />
       <div className="mt-10"></div>
       <div className=" flex flex-col items-center w-screen">

@@ -6,12 +6,17 @@ import MainHero from "../../components/home/MainHero.jsx";
 import React, { useState } from "react";
 import Card from "../../components/events/Card.jsx";
 import Hero from "../../components/home/Hero.jsx";
+import "../../styles/home.css";
+import SponsorCard from "../../components/sponsor/SponsorCard.jsx";
+import img1 from '../../assets/images/eventSample/backgroundProshows.png'
+
+
 
 function Events() {
   
 
   return (
-    <div className="h-auto ">
+    <div className="h-auto home">
       <Hero title="SPONSORS" />
       <div className="mt-10"></div>
       <div className="flex flex-col gap-4 items-center w-screen">
@@ -28,9 +33,11 @@ function Events() {
                 SPONSORS
             </div>
       </div>
-      {/* <div>
-
-      </div> */}
+      <div className="flex flex-col h-auto gap-8 md:gap-12 w-screen justify-start mb-6">
+            <SponsorCard image={img1} align="left" />
+            <SponsorCard image={img1} align="right" />
+            <SponsorCard image={img1} align="left" />
+      </div>
       <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">
             <div className="bg-[#720A08] absolute left-16 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
             <div className="bg-white absolute left-1 bottom-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
@@ -47,9 +54,11 @@ function Events() {
               SPONSORS
             </div>
       </div>
-      {/* <div>
-
-      </div> */}
+      <div className="flex flex-col h-auto gap-8 md:gap-12 w-screen justify-start mb-6 mt-2">
+            <SponsorCard image={img1} align="right" />
+            <SponsorCard image={img1} align="left" />
+            <SponsorCard image={img1} align="right" />
+      </div>
       <div className="flex flex-col gap-4 relative w-screen h-4 md:h-8">
             <div className="bg-[#720A08] absolute right-1 top-0 w-1/2 h-1/2"></div>
             <div className="bg-white absolute left-0 bottom-0 w-1/2 h-1/2"></div>
@@ -62,9 +71,11 @@ function Events() {
               SPONSORS
             </div>
       </div>
-      {/* <div>
-
-      </div> */}
+      <div className="flex flex-col h-auto gap-8 md:gap-12 w-screen justify-start mb-6 mt-4">
+            <SponsorCard image={img1} align="left" />
+            <SponsorCard image={img1} align="right" />
+            <SponsorCard image={img1} align="left" />
+      </div>
       <div className="flex flex-col gap-4 relative w-screen h-4 md:h-8 mb-12">
             <div className="bg-[#720A08] absolute left-0 top-0 w-1/2 h-1/2"></div>
             <div className="bg-white absolute right-1 bottom-0 w-1/2 h-1/2"></div>

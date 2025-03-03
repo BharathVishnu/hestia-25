@@ -1,55 +1,43 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import sponsoor from "../../assets/images/Frame.jpg";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import React, { useEffect, useRef } from "react";
+import torn_paper from "../../assets/images/torn_paper.png"; // Torn paper remains constant
+import img1 from '../../assets/images/eventSample/backgroundProshows.png'
 
-const SponsorCard = ({ sponser }) => {
+const SponsorCard = ({ image ,align}) => {
+  const canvasRef = useRef(null);
 
-  const rendercard = () => {
-    return sponser?.cat?.map((spons) => (
-      <SwiperSlide key={spons.id} >
-        <div className=" my-10 flex w-[200px] md:w-[270px] xl:w-[400px] justify-center items-center">
-          <div className="w-full h-[200px] bg-transparent border-2 rounded-lg flex justify-center items-center">
-            {spons.logo?<img src={spons.logo} className="w-3/4 h-full" alt={spons.name} />
-            :
-            <h1  style={{ fontFamily: 'Bungee',color:'#FBF0C2' }}>{spons.name}</h1>
-            }
-          </div>
-        </div>
-      </SwiperSlide>
-    ));
-  };
+  useEffect(() => {
+    if (!image) return; // Ensure an image is provided
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    const maskImage = new Image();
+    const backgroundImage = new Image();
+
+    maskImage.src = torn_paper;
+    backgroundImage.src = img1; 
+
+    maskImage.onload = () => {
+      canvas.width = maskImage.width;
+      canvas.height = maskImage.height;
+
+      backgroundImage.onload = () => {
+
+        ctx.drawImage(backgroundImage, 0, 0, maskImage.width, maskImage.height);
+
+        ctx.globalCompositeOperation = "destination-in";
+        ctx.drawImage(maskImage, 0, 0, maskImage.width, maskImage.height);
+  
+        ctx.globalCompositeOperation = "source-over";
+      };
+    };
+  }, [image]); 
 
   return (
-    <div className="pb-24">
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={2}
-        
-        initialSlide={1} 
-        breakpoints={{
-          720: { slidesPerView: 3
-          },
-          1024: { slidesPerView: 4 }, // Adjusted for screens larger than 720px
-        }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: -100,
-          modifier: 1,
-          slideShadows: false,
-        }}
-        pagination={false}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-      >
-        {rendercard()}
-      </Swiper>
+    <div className={`w-full max-w-sm sm:max-w-md md:max-w-2xl xl:max-w-4xl ${
+        align === "left" ? "self-start text-left" : "self-end text-right"
+      }`}>
+      <canvas ref={canvasRef} className="w-full h-auto"></canvas>
     </div>
   );
 };
