@@ -6,7 +6,7 @@ import Hero from "../../components/home/Hero.jsx";
 import Mcard from "../../pages/merch/Merchcard.jsx";
 const Merchs = () => {
   return (
-    <div className="h-auto flex flex-col w-screen bg-black text-white">
+    <div className="h-auto flex flex-col w-screen  text-white">
       <Hero title="MERCHANDISE" />
       <div className="mt-10">
       <Carousel />
