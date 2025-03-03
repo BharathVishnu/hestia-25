@@ -8,9 +8,12 @@ const Merchs = () => {
   return (
     <div className="h-auto flex flex-col w-screen bg-black text-white">
       <Hero title="MERCHANDISE" />
+      <div className="mt-10">
       <Carousel />
+      </div>
       
-      <div className="flex flex-col items-center bg-[url(/src/assets/images/faqbg.png)] py-24">
+      
+      <div className="flex flex-col items-center  py-24">
         <div className="relative w-screen h-4 md:h-12">
           <div className="bg-[#720A08] absolute right-1 top-0 w-24 md:w-48 h-1/4 "></div>
           <div className="bg-white absolute right-16 bottom-0 w-24 md:w-48 h-1/4 "></div>
