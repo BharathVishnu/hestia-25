@@ -11,7 +11,7 @@ const Hero = ({ title, secondtext, upper, color, desc }) => {
 
       <div className="text-center absolute inset-0 flex items-center justify-center flex-col">
         {upper &&  <p className=" mt-4 text-[#720A08] z-50 lg:text-5xl md:text-4xl text-3xl font-bold font-poppins">{upper}</p>}
-        <h1 className='text-7xl md:text-8xl lg:text-[135px] z-20  gap-8 flex flex-wrap md:flex-nowrap justify-center items-center'>
+        <h1 className='text-5xl md:text-8xl lg:text-[135px] z-20  gap-8 flex flex-wrap md:flex-nowrap justify-center items-center'>
           {title}
           {secondtext ? <div style={{ color: color }}>{secondtext}</div> : null}
         </h1>

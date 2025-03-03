@@ -5,6 +5,7 @@ export const LOGINPAGE = "/loginPage";
 export const COMINGSOON = "/comingSoon";
 export const CAMPUSAMBASSADOR = "/campusAmbassador";
 export const EVENTS = "/events";
+export const MERCHS = "/merchs";
 export const SPONSORS = "/sponsors";
 export const DASHBOARD = "/dashboard";
 export const PROFILE = "profile";
