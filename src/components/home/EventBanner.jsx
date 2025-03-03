@@ -12,7 +12,7 @@ function EventBanner() {
           <div className="font-bold font-poppins text-center xl:text-left text-3xl md:text-6xl lg:text-7xl">06.04.2025</div>
         </div>
 
-        <div className="font-bold relative bg-[#720A08] text-[#0A0A0A] text-4xl sm:text-6xl md:text-[80px] lg:text-[80px] w-full xl:w-1/2 tracking-wider p-4 text-center xl:text-left">
+        <div className="font-bold relative bg-[#720A08] text-[#0A0A0A] text-4xl sm:text-6xl md:text-[80px] lg:text-[80px] w-full xl:w-1/2 tracking-widest md:tracking-wider p-4 text-center xl:text-left">
           <div className="font-poppins flex flex-col">
             <span c>CHAOS</span>
             <span className="xl:text-right">CREATION</span>
