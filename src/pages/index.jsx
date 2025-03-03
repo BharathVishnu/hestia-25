@@ -12,6 +12,7 @@ export {default as Notifications} from './user/NotificationsPage.jsx';
 export {default as CertGen} from './user/CertGen';
 export {default as Profile} from './user/ProfilePage.jsx'
 export {default as Merchandise} from './merch/Merchandise.jsx';
+export {default as Merchs} from './merch/Merchs.jsx';
 export {default as CreateTeam} from './team/CreateTeamPage.jsx';
 export {default as TeamDetails} from './team/TeamDetailsPage.jsx';
 export {default as TermsandConditions} from './legals/TermsAndConditionsPage.jsx';

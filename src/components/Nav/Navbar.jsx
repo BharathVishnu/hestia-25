@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 function Navbar() {
   const navigationLinks = [
     ["Tickets", "/"],
-    ["About", "/"],
+    ["Merchandise", "/merchs"],
     ["Events", "/events"],
     ["Sponsors", "/sponsors"],
   ];
