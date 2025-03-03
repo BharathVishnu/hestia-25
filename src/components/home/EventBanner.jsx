@@ -3,11 +3,11 @@ import React from 'react';
 function EventBanner() {
   return (
     <div className="relative mt-8 w-full text-white">
-      <div className="flex flex-col xl:flex-row justify-between items-center xl:items-start">
-        <div className="flex flex-col w-full xl:w-1/2 pl-4 sm:pl-8 md:pl-12 xl:text-left">
+      <div className="flex flex-col gap-4 xl:gap-0 xl:flex-row justify-between items-center xl:items-start">
+        <div className="flex flex-col w-full xl:w-1/2 text-center xl:text-left">
           <div className="font-bold font-poppins flex items-center justify-center xl:justify-start">
-            <h2 className="text-3xl md:text-6xl lg:text-7xl">04.04</h2>
-            <div className="w-24 sm:w-48 md:w-64 lg:w-96 h-2 md:h-3 ml-4 sm:ml-6 md:ml-8 bg-white relative top-2 md:top-4"></div>
+            <h2 className="text-3xl md:text-6xl lg:text-7xl text-center xl:text-left">04.04</h2>
+            <div className="w-16 md:w-32 lg:w-40 xl:w-96 h-2 md:h-3 ml-4 sm:ml-6 md:ml-8 bg-white relative top-2 md:top-4"></div>
           </div>
           <div className="font-bold font-poppins text-center xl:text-left text-3xl md:text-6xl lg:text-7xl">06.04.2025</div>
         </div>

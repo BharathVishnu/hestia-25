@@ -35,7 +35,7 @@ const SponsorCard = ({ image ,align}) => {
 
   return (
     <div className={`w-full max-w-sm sm:max-w-md md:max-w-2xl xl:max-w-4xl ${
-        align === "left" ? "self-start text-left" : "self-end text-right"
+        align === "left" ? "self-center text-center md:self-start md:text-left" : "self-center md:text-center md:self-end md:text-right"
       }`}>
       <canvas ref={canvasRef} className="w-full h-auto"></canvas>
     </div>
