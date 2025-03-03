@@ -3,12 +3,13 @@ import Logo from "../../assets/icons/logo_hestia.png";
 import Facebook from "../../assets/icons/facebook.png";
 import Twitter from "../../assets/icons/twitter.png";
 import Youtube from "../../assets/icons/youtube.png";
+import Instagram from "../../assets/icons/instagram.png";
 
 const socialLinks = [
   { name: "Facebook", icon: Facebook, url: "https://www.facebook.com" },
   { name: "Twitter", icon: Twitter, url: "https://www.twitter.com" },
   { name: "Youtube", icon: Youtube, url: "https://www.youtube.com" },
-  { name: "Facebook", icon: Facebook, url: "https://www.facebook.com" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com" },
 ];
 
 const FooterLogo = () => {

@@ -45,15 +45,15 @@ const HomePage = () => {
 
 
   return (
-    <div className=" w-full max-w-screen overflow-hidden h-full  " >
+    <div className=" w-full max-w-screen overflow-hidden h-full home" >
           <MainHero title="Hestia" />
           <HeroCarousel  />
           <EventBanner/>
           <Events/>
           <PastEvents/>
           <Proshow />
+           {/* <CheckoutCarousel/> */}
           <Faq />
-          {/* <CheckoutCarousel/> */}
           {/* <PastEvents/>
           
 

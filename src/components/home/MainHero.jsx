@@ -2,6 +2,7 @@ import React from "react";
 import Headerbackground from "../../assets/images/hero/background.webp";
 import Headerbackground2 from "../../assets/images/hero/background2.webp";
 import "../../styles/hero.css";
+import "../../styles/home.css";
 import TextScramble from "./TextScramble";
 
 /**
@@ -64,8 +65,8 @@ function MainHero({ title, subtitle, keyC }) {
           className="w-full h-80 absolute bottom-0 z-10"
           alt="Background 2"
         />
-        <div className="absolute w-full bg-[#1c1b22] xl:h-[148px] md:h-[160px] h-[164px] bottom-0 overflow-hidden rotate-[3deg] -ml-1"></div>
-        <div className="absolute w-full bg-[#1c1b22] h-[140px] bottom-0 overflow-hidden"></div>
+        <div className="home absolute w-full bg-[#1c1b22] xl:h-[148px] md:h-[160px] h-[164px] bottom-0 overflow-hidden rotate-[3deg] -ml-1"></div>
+        <div className="home absolute w-full bg-[#1c1b22] h-[140px] bottom-0 overflow-hidden"></div>
       </div>
     </div>
   );
