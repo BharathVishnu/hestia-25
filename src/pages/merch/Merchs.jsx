@@ -63,7 +63,7 @@ const Merchs = () => {
       </div>
       <div className="flex flex-row items-center mx-auto justify-center  w-auto lg:w-[800px] xl:w-[1200px] h-1 md:h-4 bg-[#720A08]"></div>
       <div className="flex flex-col gap-8 relative w-screen h-10 md:h-14">
-        <div className="bg-white absolute  left-0 top-1 w-24 md:w-64 h-2/4 "></div>
+        <div className="bg-white absolute  left-0 top-1 w-24 md:w-64 h-1/4 "></div>
         <div className="bg-white absolute right-1 bottom-0 w-24 md:w-64 h-1/4 "></div>
       </div>
     </div>
