@@ -1,90 +1,78 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import bg from "../../assets/images/bg_proshow.png"
-// import pro1 from '../../assets/images/pro1.png'
-// import prb1 from '../../assets/images/imageyellow.png'
-// import pro2 from '../../assets/images/pro2.png'
-// import pro3 from '../../assets/images/pro3.png'
-// import '../../styles/proshow.css'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import bg from "../../assets/images/proshow/bg_proshow.png"
+import pro1 from '../../assets/images/proshow/pro1.png'
+import prb1 from '../../assets/images/proshow/imageyellow.png'
+import pro2 from '../../assets/images/proshow/pro2.png'
+import pro3 from '../../assets/images/proshow/pro3.png'
+import '../../styles/proshow.css'
+import ProshowCard from './ProshowCard'
 
-// function App() {
-//   const [count, setCount] = useState(0)
+const proshowitem = [
+    {imag:pro1,performer:"DJ STRELLA",date:"04 04 2025"},
+    {imag:pro1,performer:"DJ STRELLA",date:"04 04 2025"},
+    {imag:pro1,performer:"DJ STRELLA",date:"04 04 2025"},
+]
 
+function App() {
+    
+    const headingVariants = {
+        hidden: { opacity: 0, y: -50 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { 
+                duration: 0.8, 
+                ease: "easeOut" 
+            }
+        }
+    }
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2
+            }
+        }
+    }
+    
+    return (
+        <div>
+            <div className="container mx-auto px-4 py-8">
+                <motion.h1 
+                    className="text-center font-bold mb-8 lg:text-8xl md:text-6xl text-5xl" 
+                    style={{ fontFamily: 'rubik'}}
+                    initial="hidden"
+                    animate="visible"
+                    variants={headingVariants}
+                >
+                    PROSHOWS
+                </motion.h1>
+            </div>
+            <motion.div 
+                className='flex flex-col p-10 2xl:mr-96 2xl:ml-96 xl:mr-64 xl:ml-64 sm:mr-10 sm:ml-10  gap-10     '
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+            >
+                {
+                    proshowitem.map((item,index)=>{
+                        return(
+                            <ProshowCard 
+                                key={index}
+                                imgurl={item.imag} 
+                                index={index} 
+                                title={item.performer} 
+                                date={item.date}
+                            />
+                        )
+                    })
+                }
+            </motion.div>
+        </div>
+    )
+}
 
-//         return (
-//     <div style={{ backgroundImage: `url(${bg})`, height: "auto", 
-//     backgroundSize: "cover",
-//     backgroundRepeat: "no-repeat"}}>
-
-//         <div className="container mx-auto px-4 py-8">
-//         <h1 className="text-center text-4xl font-bold mb-8">PROSHOWS</h1>
-
-
-//     <div className="space-y-8">
-// {/*Event1*/}
-//         <div className="flex flex-col md: flex-row ">
-            
-//             <div className='relative mb-4 md:mb-0'>
-//                 <img
-//                     src={pro1}
-//                     className="w-[400px] h-[200px] 
-//                     flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
-//                 <img
-//                     src={prb1}
-//                     className="w-[400px] h-[200px] 
-//                     flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
-                
-//                 <div className="absolute bottom-4 md:bottom-auto md:top-[60px] md:right-[-185px] text-right right-4"> 
-//                 <div><h2 className="text-lg font-bold">DJ STRELLA</h2></div>
-//                 <div className='md:absolute md:right-[-50px]'><h3 className="text-sm ">04-04-2023</h3></div>
-//                 </div>
-//             </div>  
-//         </div>
-        
-// {/*Event2*/}
-//         <div className="flex flex-col md:flex-row-reverse">
-//             <div className='relative mb-4 md:mb-0'>
-            
-//                 <img
-//                     src={pro2} 
-//                     className="w-[400px] h-[200px] flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
-//                     <img
-//                     src={prb1}
-//                     className="w-[400px] h-[200px] 
-//                     flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
-//                     <div className="absolute bottom-4 right-4 text-right md:right-99 md:top-20 md:text-left whitespace-nowrap">
-//                     <div><h2 className="text-lg font-bold " >DJ STRELLA</h2></div>
-//                     <div className='md:absolute md:left-[-60px] '><h3 className="text-sm">03-04-2023</h3></div>
-//                 </div>
-        
-//             </div>
-//         </div>
-
-// {/*Event3*/}
-        
-//         <div className="flex flex-col md: flex-row">
-//             <div className='relative mb-4 md:mb-0'>
-//                 <img
-//                     src={pro3}
-//                     className="w-[400px] h-[200px] flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto" />
-//                     <img
-//                     src={prb1}
-//                     className="w-[400px] h-[200px] 
-//                     flex-shrink-0 aspect-[840.24/606.01] max-w-full h-auto absolute bottom-2 right-2" />
-//                     <div className="absolute bottom-4 md:bottom-auto md:top-[60px] md:right-[-185px] text-right right-4"> 
-//                     <div><h2 className="text-lg font-bold">DJ STRELLA</h2></div>
-//                     <div className='md:absolute md:right-[-50px]'><h3 className="text-sm ">04-04-2023</h3></div>
-//                 </div>
-//             </div>
-//         </div>
-//         </div>
-//     </div>
-//   </div>
-
-//     )
-
-// }    
-// export default App
-export default function Proshow()
-{}
+export default App

@@ -51,6 +51,7 @@ const HomePage = () => {
           <EventBanner/>
           <Events/>
           <PastEvents/>
+          <Proshow />
           <Faq />
           {/* <CheckoutCarousel/> */}
           {/* <PastEvents/>
