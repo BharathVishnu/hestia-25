@@ -6,34 +6,34 @@ const ProshowCard = ({ imgurl, index, title, date }) => {
     const cardRef = useRef(null);
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
-    const isInview = useInView(cardRef, { amount: 0.3, once: false })
+    const isInview = useInView(cardRef, { amount: 0.3, once: false });
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768); 
             setIsTablet(window.innerWidth > 768 && window.innerWidth <= 1024); 
         };
-
         handleResize(); 
         window.addEventListener('resize', handleResize);
-
         return () => window.removeEventListener('resize', handleResize); 
     }, []);
 
     const { scrollYProgress } = useScroll({
         target: cardRef,
-        offset: ["start center", "center center"]
+        offset: ["start end", "end start"]
     });
 
     const yTitle = useTransform(
         scrollYProgress,
-        [0, 1],
-        [0, isMobile ? 0 : isTablet ? 50 : 90]
-      );
-      const yDate = useTransform(
+        [0, 0.5, 1],
+        [50, 0, 50]
+    );
+    
+    const yDate = useTransform(
         scrollYProgress,
-        [0, 1],
-        [0, isMobile ? 0 : isTablet ? 75 : 100]
-      );
+        [0, 0.5, 1],
+        [70, 0, 70]
+    );
 
     const cardVariants = {
         hidden: { 
@@ -88,19 +88,19 @@ const ProshowCard = ({ imgurl, index, title, date }) => {
 
     return (
         <motion.div 
-        className={`relative flex ${index % 2 !== 0 ? '' : 'flex-row-reverse'}`} 
-        variants={cardVariants}
-        animate={isInview ? "visible" : "hidden"}
-        initial="hidden"
-        ref={cardRef}
-        style={{
-          justifyContent: index % 2 !== 0 ? 'flex-start' : 'flex-end', 
-          width: '100%'
-        }}
-      >
+            className={`relative flex ${index % 2 !== 0 ? '' : 'flex-row-reverse'}`} 
+            variants={cardVariants}
+            animate={isInview ? "visible" : "hidden"}
+            initial="hidden"
+            ref={cardRef}
+            style={{
+                justifyContent: index % 2 !== 0 ? 'flex-start' : 'flex-end', 
+                width: '100%'
+            }}
+        >
             <div className="flex justify-center items-center relative">
                 <motion.div 
-                    className="lg:w-[650px]  sm:h-64 sm:w-[400px] h-52 w-[220px] lg:h-[400px] border-[#8E0A15] z-0 overflow-hidden"
+                    className="lg:w-[650px] sm:h-64 sm:w-[400px] h-52 w-[220px] lg:h-[400px] border-[#8E0A15] z-0 overflow-hidden"
                     variants={imageVariants}
                 >
                     <img 
