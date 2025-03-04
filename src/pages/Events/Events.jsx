@@ -12,17 +12,18 @@ function Events() {
   const [loading, setLoading] = useState(true);
   const [filteredEvents, setFilteredEvents] = useState([]); 
   const [selectedDates, setSelectedDates] = useState([]); 
+  const [query, setQuery] = useState(""); 
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch(BASE_URL+"/api/events/all/");
+        const response = await fetch(BASE_URL + "/api/events/all/");
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
-        console.log("Fetched Data:", data); 
-        setEvents(data.results); 
+        console.log("Fetched Events from API:", data);
+        setEvents(data.results);
         setFilteredEvents(data.results);
       } catch (error) {
         console.error("Error fetching events:", error);
@@ -30,27 +31,54 @@ function Events() {
         setLoading(false);
       }
     };
-
+  
     fetchEvents();
   }, []);
 
   const toggleFilterByDate = (dateString) => {
-    let updatedDates;
-    if (selectedDates.includes(dateString)) {
-      updatedDates = selectedDates.filter((date) => date !== dateString); // Remove date
-    } else {
-      updatedDates = [...selectedDates, dateString]; // Add new date
-    }
-    setSelectedDates(updatedDates);
+    let updatedDates = [...selectedDates];
 
-    if (updatedDates.length === 0) {
-      setFilteredEvents(events); // If no dates selected, show all events
+    if (updatedDates.includes(dateString)) {
+      updatedDates = updatedDates.filter((date) => date !== dateString);
     } else {
-      setFilteredEvents(events.filter((event) => 
-        updatedDates.some((date) => event.event_start.startsWith(date))
-      ));
+      updatedDates.push(dateString);
     }
+
+    setSelectedDates(updatedDates);
+    applyFilters(query, updatedDates);
   };
+
+  const applyFilters = (searchQuery, selectedDates) => {
+    console.log("Applying Filters -> Query:", searchQuery, "Dates:", selectedDates);
+    console.log("Events Before Filtering:", events);
+  
+    let filtered = events;
+  
+    if (selectedDates.length > 0) {
+      filtered = filtered.filter((event) =>
+        selectedDates.some((date) => event.event_start.startsWith(date))
+      );
+    }
+  
+    if (searchQuery.trim() !== "") {
+      filtered = filtered.filter((event) =>
+        event.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+  
+    console.log("Filtered Events After Search:", filtered);
+    setFilteredEvents(filtered);
+  };
+  
+
+  const handleSearch = (e) => {
+    const searchQuery = e.target.value;
+    console.log("Search Query Entered:", searchQuery);
+    setQuery(searchQuery);
+    applyFilters(searchQuery, selectedDates);
+  };
+  
+
   return (
     <div className="home h-auto">
       <Hero title={"MAJOR"} secondtext={"EVENTS"} color={"#720A08"} />
@@ -61,7 +89,7 @@ function Events() {
           <div className="bg-[#720A08] absolute right-1 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
           <div className="bg-white absolute right-16 bottom-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
         </div>
-        <Search />
+         <Search query={query} handleSearch={handleSearch} />
         <div className="flex flex-col gap-4 relative w-screen h-4 md:h-12">
           <div className="bg-[#720A08] absolute left-16 top-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>
           <div className="bg-white absolute left-1 bottom-0 w-24 md:w-48 h-1/4 rounded-2xl"></div>

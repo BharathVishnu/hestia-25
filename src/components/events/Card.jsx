@@ -25,7 +25,7 @@ function EventCard({ event, index }) {
                   alt={event.title || "Event"}
                 />
               ) : (
-                <p className="text-center text-white">No Image</p>
+                <p className="text-center mx-auto text-white">No Image</p>
               )}
             </div>
           </div>
