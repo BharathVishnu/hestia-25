@@ -140,7 +140,7 @@ const PastEvents = () => {
         position: "absolute",
         color: "white",
         WebkitTextStroke: ".1vw white",
-        mixBlendMode: "difference",
+        mixBlendMode: "exclusion",
       }}>
         MOMENTS THAT MATTERED.
       </span>
