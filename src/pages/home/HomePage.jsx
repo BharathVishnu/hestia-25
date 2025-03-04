@@ -48,8 +48,7 @@ const HomePage = () => {
           <Carousel />
           <EventBanner/>
           <Events/>
-          <PastEvents/>
-
+           <PastEvents/>
           {/*<Carousel /> */}
           {/* <About /> */}
           {/* <Events /> */}

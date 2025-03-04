@@ -49,7 +49,7 @@ const PastEvents = () => {
         right: "4%",
         fontSize: "3.7vw",
         color: "transparent",
-        WebkitTextStroke: "1px white",
+        WebkitTextStroke: ".1vw white",
         fontWeight:"bolder",
         mixBlendMode: "exclusion",
         backgroundColor: "black",
@@ -110,7 +110,7 @@ const PastEvents = () => {
           fontSize: "3.7vw",
           fontWeight: "bolder",
           color: "transparent",
-          WebkitTextStroke: "1px white",
+          WebkitTextStroke: ".1vw white",
           mixBlendMode: "difference"
           
           }}>MOMENTS THAT MATTERED.</span>
