@@ -40,7 +40,7 @@ function App() {
     
     return (
         <div>
-            <div className="container mx-auto px-4 py-8">
+            <div className="container mx-auto px-4 py-8 scroll-smooth ">
                 <motion.h1 
                     className="text-center font-bold mb-8 lg:text-8xl md:text-6xl text-5xl" 
                     style={{ fontFamily: 'rubik'}}
@@ -52,7 +52,7 @@ function App() {
                 </motion.h1>
             </div>
             <motion.div 
-                className='flex flex-col p-10 2xl:mr-96 2xl:ml-96 xl:mr-64 xl:ml-64 sm:mr-10 sm:ml-10  gap-10     '
+                className='flex flex-col p-10 2xl:mr-64 2xl:ml-64 xl:mr-28 xl:ml-28   sm:mr-4 sm:ml-4  gap-10     '
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
@@ -60,6 +60,7 @@ function App() {
                 {
                     proshowitem.map((item,index)=>{
                         return(
+                            <div className=' py-20 sm:py-32 lg:py-40 flex items-center'>
                             <ProshowCard 
                                 key={index}
                                 imgurl={item.imag} 
@@ -67,6 +68,7 @@ function App() {
                                 title={item.performer} 
                                 date={item.date}
                             />
+                            </div>
                         )
                     })
                 }

@@ -38,7 +38,7 @@ function MainHero({ title, subtitle, keyC }) {
     >
       <img
         src={Headerbackground}
-        className="w-screen h-56 absolute top-0 z-10"
+        className="w-screen md:h-52  h-44 absolute top-0 z-10"
         alt="Background"
       />
 

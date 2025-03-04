@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext,useRef } from "react";
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 import "./App.css";
 import { LoaderContext } from "./context/loader.jsx";
@@ -11,7 +11,7 @@ import SponsorsPage from "./pages/sponsors/SponsorsPage.jsx";
 import TownscriptWidget from "./utils/townscript-pay.jsx";
 
 import { TOKEN_STORAGE_KEY, USER_STORAGE_KEY } from "./constants/key";
-
+import Lenis from '@studio-freight/lenis';
 import { UserContext } from "./context/user.jsx";
 import { getUserDetailsAPI } from "./services/user";
 import { campusAmbassodorAPI } from "./services/campusAmbassadorAPI.js";
@@ -31,6 +31,34 @@ function App() {
   const [userDetails, setUserDetails] = userState;
   const { setLoader } = useContext(LoaderContext);
 
+
+  const lenis = useRef(null)
+  useEffect(() => {
+    // Initialize Lenis
+    lenis.current = new Lenis({
+      duration: 0.5, 
+      easing: (t) => 1 - Math.pow(1 - t, 3), 
+      smooth: true,
+      smoothTouch: true, 
+    });
+
+    const animate = (time) => {
+      lenis.current.raf(time);
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+
+    // Cleanup on unmount
+    return () => {
+      lenis.current.destroy();
+    };
+  }, []);
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    lenis.current.scrollTo(element);
+  };  
   useEffect(() => {
     (async () => {
       setLoader(true);
