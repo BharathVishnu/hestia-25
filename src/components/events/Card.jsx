@@ -21,7 +21,7 @@ function EventCard({ event, index }) {
               {event.image ? (
                 <img
                   src={event.image}
-                  className="object-contain w-full h-full"
+                  className="object fill md:object-contain w-full h-full"
                   alt={event.title || "Event"}
                 />
               ) : (
