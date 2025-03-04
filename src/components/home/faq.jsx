@@ -33,10 +33,12 @@ export default function FAQSection() {
             className="w-full flex justify-between items-center 2xl:text-4xl xl:text-3xl lg:text-2xl font-bold uppercase tracking-wide py-4 px-6 hover:bg-opacity-100 transition-all"
             style={{ fontFamily: "Poppins" }}
             onClick={() => toggleFAQ(index)}
+            
           >
-            <span className="flex items-center gap-3 pl-10 md:pl-5">
+            <span className="flex items-center gap-8 justify-start">
               <span className="text-yellow-400 2xl:text-3xl xl:text-2xl lg:text-xl">★</span> {faq.question}
             </span>
+            
             <motion.span 
               animate={{ rotate: openIndex === index ? 180 : 0 }}
               transition={{ duration: 0.3 }}

@@ -1,25 +1,29 @@
 import React from "react";
-import "../../styles/events.css";
 
 const EventCard = ({ title, imageSrc, onClick }) => (
-  <div
-    className="w-64 h-80 bg-transparent relative rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer font-poppins"
-  >
-    <div className="canvas w-full h-full relative">
-      {/* <img
-        src={imageSrc}
-        alt={title}
-        className="w-full h-[365px] object-cover"
-      /> */}
+  <div className="w-72 h-72 bg-transparent relative cursor-pointer font-poppins">
+    <div className="bg-white w-full h-full relative">
       <div className="w-full h-[365px] text-white"></div>
-      <div className="absolute inset-10 transform -rotate-90">
-        <h3 className="text-black text-2xl font-bold uppercase tracking-wider">
+      <div className="absolute inset-4 transform -rotate-90 pl-1">
+        <h3 className="text-black text-3xl font-bold uppercase tracking-wider">
           {title}
         </h3>
       </div>
     </div>
-    <div  onClick={onClick} style={{clipPath: "polygon(0 0, 100% 0, 100% 57%, 80% 100%, 1% 100%)",}} className="checkout-button uppercase absolute bottom-[-12px] right-[-8px] bg-[#720A08] text-white text-sm font-bold px-6 py-2 clip-polygon">
-      Check It Out
+    <div className="relative">
+      <div
+        className="absolute bottom-[-20px] right-[-14px] w-[160px] h-[50px] border-2 border-white  "
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 57%, 80% 100%, 0% 100%)" }}
+      >
+        
+      </div>
+      <div
+        onClick={onClick}
+        className="absolute bottom-[-12px] right-[-8px] bg-[#720A08] text-white text-sm font-bold px-6 py-2 uppercase"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 57%, 80% 100%, 1% 100%)" }}
+      >
+        Check It Out
+      </div>
     </div>
   </div>
 );

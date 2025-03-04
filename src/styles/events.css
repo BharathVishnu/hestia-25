@@ -11,10 +11,10 @@
   .canvas::before {
     content: '';
     position: absolute;
-    top: -50%; 
-    left: -50%;
-    bottom: -50%;
-    right: -50%;
+    top: -0%; 
+    left: -0%;
+    bottom: -0%;
+    right: -0%;
     background: radial-gradient(circle at center, #333, #fff);
     background-size: 0.25em 0.25em;
     transform: rotate(20deg);
@@ -71,3 +71,5 @@
   .checkout-button:hover::after {
     width: 100%;
   }
+
+  

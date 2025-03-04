@@ -15,10 +15,10 @@ import EventHeader from "./EventHeader";
 
 const Events = () => {
   const events = [
-    { title: "Technicals", imageSrc: Technicals },
+    { title: "Informals", imageSrc: Technicals },
     { title: "Culturals", imageSrc: Culturals },
-    { title: "Workshops", imageSrc: Workshop },
-    { title: "Informals", imageSrc: Workshop },
+    { title: "Technicals", imageSrc: Workshop },
+    
   ];
 
   const handleCardClick = (title) => {
@@ -28,7 +28,7 @@ const Events = () => {
   return (
     <div className="flex flex-col p-6">
       <EventHeader/>
-      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
         {events.map((event, index) => (
           <EventCard
             key={index}
