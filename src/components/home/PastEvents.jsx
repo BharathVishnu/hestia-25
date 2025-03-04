@@ -60,9 +60,9 @@ const PastEvents = () => {
           fontWeight: "bolder", 
           position: "absolute",
           color: "white",
-          WebkitTextStroke: ".1vw white",
-          mixBlendMode:"difference",
-      }}>
+          WebkitTextStroke: ".04vw white",
+          mixBlendMode: "difference",
+        }}>
         HESTIA THROUGH THE AGES.
       </span>
       <span style = {{
@@ -74,7 +74,7 @@ const PastEvents = () => {
           fontWeight: "bolder", 
           position: "absolute",
           color: "transparent",
-          WebkitTextStroke: ".1vw white"
+          WebkitTextStroke: ".08vw white"
         }}>
         HESTIA THROUGH THE AGES.
       </span>
