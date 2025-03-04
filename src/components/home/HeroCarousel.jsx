@@ -27,7 +27,7 @@ function Carousel() {
         transition={{
           repeat: Infinity,
           repeatType: "loop",
-          duration: 10, 
+          duration: 30, 
           ease: "linear",
         }}
       >
