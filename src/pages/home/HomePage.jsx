@@ -52,7 +52,7 @@ const HomePage = () => {
           <Events/>
           <PastEvents/>
           <Proshow />
-           {/* <CheckoutCarousel/> */}
+           <CheckoutCarousel/>
           <Faq />
           {/* <PastEvents/>
           
