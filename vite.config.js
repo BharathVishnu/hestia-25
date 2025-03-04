@@ -6,11 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": {
-        target: "https://backend.hestiatkmce.in",
-        changeOrigin: true,
-        secure: false,
-      },
     },
   },
 });

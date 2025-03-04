@@ -16,12 +16,12 @@ function EventCard({ event, index }) {
           className={`mb-2 flex justify-center items-center h-64 lg:h-96 transition-transform duration-300 
           ${isHovered ? "opacity-100 translate-x-4 translate-y-4" : "opacity-100"}`}
         >
-          <div className="border-2 bg-transparent group-hover:p-4 group-hover:bg-[#720A08] h-64 lg:h-96 relative">
+          <div className="border-2 bg-transparent group-hover:p-4 group-hover:bg-[#720A08] h-64 lg:h-96 relative w-full">
             <div className="group-hover:border-2 group-hover:border-white w-full h-full">
               {event.image ? (
                 <img
                   src={event.image}
-                  className="object-fill w-auto h-full"
+                  className="object-contain w-full h-full"
                   alt={event.title || "Event"}
                 />
               ) : (
