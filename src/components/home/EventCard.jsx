@@ -1,11 +1,11 @@
 import React from "react";
 
 const EventCard = ({ title, imageSrc, onClick }) => (
-  <div className="w-72 h-72 bg-transparent relative cursor-pointer font-poppins">
+  <div className="w-48 h-48 md:w-72 md:h-72 bg-transparent relative cursor-pointer font-poppins">
     <div className="bg-white w-full h-full relative">
       <div className="w-full h-[365px] text-white"></div>
       <div className="absolute inset-4 transform -rotate-90 pl-1">
-        <h3 className="text-black text-3xl font-bold uppercase tracking-wider">
+        <h3 className="text-black text-xl md:text-3xl font-bold uppercase tracking-wider">
           {title}
         </h3>
       </div>
