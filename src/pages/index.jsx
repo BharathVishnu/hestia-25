@@ -4,7 +4,7 @@ export { default as CampusAmbassador } from './campus_ambassador/CampusAmbassado
 export { default as NotFound } from './not_found/NotFound.jsx';
 export {default as Events} from './Events/EventsListPage.jsx';
 export {default as EventsCollection} from './Events/EventsListPage.jsx';
-export {default as EventDetails} from './Events/EventDetailViewPage.jsx';
+export {default as EventDetails} from './Events/Events.jsx';
 export {default as Contact} from './contact/ContactPage.jsx';
 export {default as Sponsors} from './sponsors/SponsorsPage.jsx';
 export {default as Dashboard }from './user/DashboardPage.jsx';

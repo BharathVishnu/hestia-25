@@ -110,16 +110,12 @@ function App() {
             {/* <Route path={ROUTES.SPONSORS} element={<Pages.Sponsors />} exact /> */}
             <Route path={ROUTES.SPONSORS} element={<SponsorsPage />} />
             <Route path={ROUTES.EVENTS} element={<Pages.Events />} exact />
+            <Route path={ROUTES.EVENTS_CATEGORY} element={<Pages.EventDetails/>} exact/>
             <Route path={ROUTES.LOGINPAGE} element={<LoginPage />} exact />
             <Route path={ROUTES.CONTACTUS} element={<Pages.Contact />} exact />
             <Route path={ROUTES.COMBOS} element={<Pages.Combos />} exact />
             <Route path={ROUTES.COMBOS_PAGE} element={<Pages.ComboDetailViewPage />} exact />
             <Route path="*" exact={true} element={<Pages.NotFound />} />
-            <Route
-              path={ROUTES.EVENTS_CATEGORY}
-              element={<Pages.EventsCollection />}
-              exact
-            />
             <Route
               path={ROUTES.EVENT_DETAILS}
               element={<Pages.EventDetails />}

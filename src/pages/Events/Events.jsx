@@ -6,8 +6,10 @@ import Hero from "../../components/home/Hero.jsx";
 import Card from "../../components/events/Card.jsx";
 import "../../styles/home.css";
 import { BASE_URL } from "../../constants/urls.js";
+import { useParams } from "react-router-dom";
 
 function Events() {
+  const { category } = useParams();
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredEvents, setFilteredEvents] = useState([]); 
@@ -24,7 +26,14 @@ function Events() {
         const data = await response.json();
         console.log("Fetched Events from API:", data);
         setEvents(data.results);
-        setFilteredEvents(data.results);
+        if (category) {
+          const categoryFiltered = data.results.filter(
+            (event) => event.event_category.toLowerCase() === category.charAt(0).toLowerCase()
+          );
+          setFilteredEvents(categoryFiltered);
+        } else {
+          setFilteredEvents(data.results);
+        }
       } catch (error) {
         console.error("Error fetching events:", error);
       } finally {
