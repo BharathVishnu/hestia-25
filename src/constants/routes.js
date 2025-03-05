@@ -31,3 +31,4 @@ export const PRICING = "/pricing";
 export const SHIPPING = "/shipping"
 export const ABOUT_US = "/about-us"
 export const PROSHOW_BOOKING = "/proshow/booking/:category"
+export const PROSHOW = "/proshow"

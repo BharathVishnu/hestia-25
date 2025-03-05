@@ -17,6 +17,7 @@ import { getUserDetailsAPI } from "./services/user";
 import { campusAmbassodorAPI } from "./services/campusAmbassadorAPI.js";
 import Footer from "./components/footer/Footer.jsx";
 import Proshowbooking from "./pages/proshow/Proshowbooking.jsx";
+import Proshow from "./pages/proshow/Proshow.jsx";
 //import Sponsor from "./pages/sponsors/Sponsor.jsx";
 
 function RequireAuth() {
@@ -159,6 +160,10 @@ function App() {
             element={<Proshowbooking />}
             exact 
             />
+             <Route path={ROUTES.PROSHOW}
+              element={<Proshow />} 
+              exact />
+
           </Routes>
 
           <div className="w-full">
