@@ -12,7 +12,7 @@ const EventCard = ({ title, imageSrc, onClick }) => (
     </div>
     <div className="relative">
       <div
-        className="absolute bottom-[-20px] right-[-14px] w-[160px] h-[50px] border-2 border-white  "
+        className="absolute bottom-[-20px] right-[-14px] w-[160px] h-[50px] border border-white  "
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 57%, 80% 100%, 0% 100%)" }}
       >
         
