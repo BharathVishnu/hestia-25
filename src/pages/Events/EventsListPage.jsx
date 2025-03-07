@@ -20,7 +20,7 @@ const EventListing = () => {
     <div className="scroll-smooth mt-40 flex flex-col w-screen h-full md:h-screen text-xl md:text-2xl">
          <img
         src={Headerbackground}
-        className="w-screen md:h-52  h-44 absolute top-0 z-10"
+        className="w-screen md:h-40  h-44 absolute top-0 z-10"
         alt="Background"
       />
         <div className="w-full h-[500px] md:h-1/2 flex flex-col md:flex-row transition-all duration-1000">
