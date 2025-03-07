@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../../components/home/Hero'
 import Carousel from '../../components/home/HeroCarousel';
 import TwoLine from '../../components/Proshow/TwoLine';
 import ProshowbookingCard from '../../components/Proshow/ProshowbookingCard';
 import bg from '../../assets/images/bg.avif'
 const Proshowbooking = () => {
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
     return (
         <div className='' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Hero title={"Pro"} secondtext={"show"} color={"#720A08"} />
