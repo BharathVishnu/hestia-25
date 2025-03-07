@@ -30,12 +30,7 @@ function App() {
   const { userState, tokenState } = useContext(UserContext);
   const [token, setToken] = tokenState;
   const [userDetails, setUserDetails] = userState;
-  const { setLoader } = useContext(LoaderContext);
-  useEffect(()=>{
-    setTimeout(() => {
-      setLoader(false)
-    }, 2000);
-  },[])
+  const { setLoader ,setProgress} = useContext(LoaderContext);
 
   const lenis = useRef(null)
   useEffect(() => {
@@ -69,6 +64,7 @@ function App() {
       setLoader(true);
       const loggedInUser = localStorage.getItem(USER_STORAGE_KEY);
       const loggedInUserToken = localStorage.getItem(TOKEN_STORAGE_KEY);
+      setProgress(25)
       try {
         if (
           loggedInUser !== null &&
@@ -76,6 +72,7 @@ function App() {
           loggedInUser.length > 0 &&
           loggedInUserToken.length > 0
         ) {
+          setProgress(50)
           const user = await JSON.parse(loggedInUser);
           const response = await getUserDetailsAPI(loggedInUserToken);
 
@@ -84,13 +81,18 @@ function App() {
             const userData = await response.json();
             setUserDetails(userData);
             setToken(loggedInUserToken);
+            setProgress(75)
           }
         }
       } catch (e) {
         console.error(e);
       }
       finally {
-        setLoader(false)
+        setProgress(100)
+        setTimeout(() => {
+          setLoader(false)
+        }, 2000);
+        
       }
     })();
   }, [setToken, setUserDetails]);
@@ -116,7 +118,7 @@ function App() {
             {/* <Route path={ROUTES.SPONSORS} element={<Pages.Sponsors />} exact /> */}
             <Route path={ROUTES.SPONSORS} element={<SponsorsPage />} />
             <Route path={ROUTES.EVENTS} element={<Pages.Events />} exact />
-            <Route path={ROUTES.EVENTS_CATEGORY} element={<Pages.EventDetails/>} exact/>
+            <Route path={ROUTES.EVENTS_PAGE} element={<Pages.EventDetails/>} exact/>
             <Route path={ROUTES.LOGINPAGE} element={<LoginPage />} exact />
             <Route path={ROUTES.CONTACTUS} element={<Pages.Contact />} exact />
             <Route path={ROUTES.COMBOS} element={<Pages.Combos />} exact />
@@ -189,7 +191,7 @@ function App() {
             element={<Proshowbooking />}
             exact 
             />
-             <Route path={ROUTES.PROSHOW}
+             <Route path={ROUTES.PROSHOW_PAGE}
               element={<Proshow />} 
               exact />
 

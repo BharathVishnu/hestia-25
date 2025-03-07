@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-
+import bg from '../../assets/images/bg.avif'
 import EventcardVar2 from '../../components/events/EventcardVar2.jsx';
 import { Link } from 'react-router-dom';
 
@@ -107,7 +107,7 @@ function DashboardPage(props) {
     ]; 
 
     return (
-        <div className='relative grid-background text-white font-poppins w-full min-h-[100vh]  py-4 px-4 md:px-8 bg-black'>
+        <div className='relative grid-background text-white font-poppins w-full min-h-[100vh]  py-4 px-4 md:px-8' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className='absolute top-0 right-0 profile-section  md:w-1/4 h-full '>
 
             </div>
