@@ -5,7 +5,6 @@ import TwoLine from '../../components/Proshow/TwoLine';
 import ProshowbookingCard from '../../components/Proshow/ProshowbookingCard';
 import bg from '../../assets/images/bg.avif'
 const Proshowbooking = () => {
-    
     return (
         <div className='' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Hero title={"Pro"} secondtext={"show"} color={"#720A08"} />

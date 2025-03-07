@@ -16,7 +16,7 @@ export const MERCHANDISE = "/merchandise";
 export const MERCHANDISE_ORDER_PREVIEW = "/merchandise/:size/order_preview";
 export const EVENTS_PAGE = "/events/technical";
 export const PROSHOW_PAGE = "/events/proshow"
-export const EVENT_DETAILS = "/events/:category/:id";
+export const EVENT_DETAILS = "/events/:slug";
 export const CREATE_TEAM = "/events/:category/:slug/create_team";
 export const TEAM_DETAILS = "/events/:category/:slug/team_details";
 

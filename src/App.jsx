@@ -126,7 +126,7 @@ function App() {
             <Route path="*" exact={true} element={<Pages.NotFound />} />
             <Route
               path={ROUTES.EVENT_DETAILS}
-              element={<Pages.EventDetails />}
+              element={<Pages.Eventindividual />}
               exact
             />
             <Route element={<RequireAuth />}>
