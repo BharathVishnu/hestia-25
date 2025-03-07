@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import GoogleAuth from '../../components/auth/GoogleAuth.jsx';
-
 import logoHestia from "../../assets/icons/logo_hestia.png";
 import '../../styles/home.css'
 import '../../styles/hero.css'

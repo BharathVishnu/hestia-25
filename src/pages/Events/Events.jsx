@@ -7,7 +7,7 @@ import Card from "../../components/events/Card.jsx";
 import "../../styles/home.css";
 import { BASE_URL } from "../../constants/urls.js";
 import { useParams } from "react-router-dom";
-
+import { ProgressSpinner } from "primereact/progressspinner";
 function Events() {
   const { category } = useParams();
   const [events, setEvents] = useState([]);
@@ -109,7 +109,7 @@ function Events() {
 
         
         {loading ? (
-          <p className="text-center text-white">Loading events...</p>
+           <ProgressSpinner/>
         ) : (
           <Card events={filteredEvents} />
         )}

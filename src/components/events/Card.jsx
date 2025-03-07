@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 function EventCard({ event, index }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -43,13 +43,14 @@ function EventCard({ event, index }) {
       </div>
 
       
-      <div
+      <Link to={`/events/${event.slug}`}
         className="bg-[#720A08] uppercase font-bold w-full p-3 opacity-0 group-hover:opacity-100 flex flex-row justify-between"
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 59%, 82% 100%, 0 100%, 0% 50%)" }}
       >
         <span>Register Now</span>
         <span className="text-md">→</span>
-      </div>
+      </Link>
+      
     </div>
   );
 }

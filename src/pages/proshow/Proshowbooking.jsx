@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../../components/home/Hero'
 import Carousel from '../../components/home/HeroCarousel';
 import TwoLine from '../../components/Proshow/TwoLine';
 import ProshowbookingCard from '../../components/Proshow/ProshowbookingCard';
-
+import bg from '../../assets/images/bg.avif'
 const Proshowbooking = () => {
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
     return (
-        <div className=''>
+        <div className='' style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Hero title={"Pro"} secondtext={"show"} color={"#720A08"} />
             <div className='mt-10'>
                 <Carousel />
@@ -73,24 +76,32 @@ const Proshowbooking = () => {
                     </div>
 
                 </div>
-                <div className='flex w-screen justify-center mt-20' style={{ fontFamily: 'rubik' }}>
+                <div className='flex w-screen justify-center mt-20 mb-20' style={{ fontFamily: 'rubik' }}>
                     <div className='bg-[#720A08] md:w-80 w-40  h-16'>
                     </div>
                     <div className='bg-white absolute mt-5 ml-5 md:w-80 w-40 h-16 flex justify-center items-center z-10'>
                         <h1 className='text-black  text-2xl'>Price : <span className='text-[#FBAD44] text-2xl font-bold font-poppins'>300rs</span></h1>
                     </div>
-                    <div className='border border-black p-2 w-40 h-16 z-20 absolute -border-r-[22px] mt-16 md:ml-80 ml-40 ' style={{
-                        clipPath: "polygon(0 0, 100% 0, 100% 45%,85% 100%, 0 100%)",
-                    }}>
-                        <div
-                            className="relative w-full h-full flex justify-between items-center font-poppins bg text-white px-4 bg-[#720A08]"
-                            style={{
-                                clipPath: "polygon(0 0, 100% 0, 100% 50%,90% 100%, 0 100%)",
-                            }}
-                        >
-                            BOOK NOW →
-                        </div>
 
+                    <div className="relative mr-56">
+                        <svg height="80" width="200" xmlns="http://www.w3.org/2000/svg" className="absolute mt-16  z-10 ">
+                          
+                            <polygon
+                                points="0 0, 200 0, 200 40, 178 75, 0 75"
+                                style={{ fill: "transparent", stroke: "white", strokeWidth: 2 }}
+                            />
+
+                            <foreignObject x="6" y="6" width="188" height="60">
+                                <div
+                                    className="w-full h-full flex justify-between items-center font-poppins text-white px-6 py-3 bg-[#720A08]"
+                                    style={{
+                                        clipPath: "polygon(0 0, 100% 0, 100% 50%, 90% 100%, 0 100%)"
+                                    }}
+                                >
+                                    BOOK NOW →
+                                </div>
+                            </foreignObject>
+                        </svg>
                     </div>
                 </div>
             </div>
