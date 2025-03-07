@@ -1,0 +1,102 @@
+@property --i0 {
+    syntax: '<number>';
+    initial-value: 0;
+    inherits: true
+}
+
+@property --j0 {
+    syntax: '<number>';
+    initial-value: 0;
+    inherits: true
+}
+
+@property --k0 {
+    syntax: '<number>';
+    initial-value: 0;
+    inherits: true
+}
+
+.section {
+    --i0: 0;
+    --j0: 0;
+    --k0: 0;
+    animation:
+        i0 3.2591s linear infinite,
+        j0 4.6087s linear infinite,
+        k0 7.5s linear infinite;
+    display: grid;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.section * {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.section::before {
+    background: linear-gradient(90deg, #646363, #646363, #646363, #646363, #646363);
+    content: '';
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.section:nth-child(2) {
+    --map: linear-gradient(#000, #777, #000) 0 calc(var(--j0)*20vh)/ 100% 20vh;
+}
+
+.section:nth-child(3) {
+    --map: radial-gradient(circle at calc(var(--i0)*100%) calc(var(--j0)*100%), #777 9%, #000 50%);
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.section:nth-child(4) {
+    --map: repeating-radial-gradient(circle, #777 calc((var(--k0) - 1)*20%), #000, #777 calc(var(--k0)*20%));
+}
+
+.section:nth-child(5) {
+    --map: conic-gradient(from calc(var(--k0)*360deg), #777, #000 calc(var(--j0)*50%) calc(100% - var(--j0)*50%), #777);
+    animation-direction: normal, alternate, normal;
+    animation-timing-function: linear, ease-out, linear;
+}
+
+.section:nth-child(6) {
+    --map: repeating-conic-gradient(from calc(var(--k0)*360deg), #777, #000 8% 13%, #777 20%);
+}
+
+.section:not(:hover) {
+    animation-play-state: paused;
+}
+
+
+@keyframes i0 {
+    to {
+        --i0: 1
+    }
+}
+
+@keyframes j0 {
+    to {
+        --j0: 1
+    }
+}
+
+@keyframes k0 {
+    to {
+        --k0: 1
+    }
+}
+
+
+.halftone {
+    place-self: stretch;
+    position: relative;
+    z-index: 1;
+    background:
+        var(--map, linear-gradient(calc(var(--k0)*360deg), #777 9%, #000)),
+        var(--pattern, radial-gradient(closest-side, #888, #000) 0/ 1em 1em space);
+    background-blend-mode: screen;
+    mix-blend-mode: multiply;
+    filter: contrast(21);
+}

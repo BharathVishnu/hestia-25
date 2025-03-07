@@ -29,3 +29,30 @@
     src: url('/fonts/Okami/Okami.otf') format('opentype');
     color: #FBF0C2;
   }   
+
+  @font-face {
+    font-family: 'Rubikvinyl';
+    src: url('/fonts/Rubik_Vinyl/RubikVinyl-Regular.ttf') format('opentype');
+    color: #FBF0C2;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('opentype');
+    color: #FBF0C2;
+  }
+
+  @font-face {
+    font-family: 'rubik';
+    src: url('/fonts/rubik/RubikVinyl-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: 'rubikfade';
+    src: url('/fonts/rubik-fade/Rubik80sFade-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
