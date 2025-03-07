@@ -5,7 +5,7 @@ export const LoaderContext = createContext();
 import { ProgressSpinner } from "primereact/progressspinner";
 
 export const LoaderContextProvider = (props) => {
-  const [show, setLoader] = useState(false);
+  const [show, setLoader] = useState(true);
   return (
     <LoaderContext.Provider value={{ setLoader }}>
       {show && (

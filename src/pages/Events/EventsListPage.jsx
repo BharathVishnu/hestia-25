@@ -4,6 +4,7 @@ import Informals from "../../assets/images/categoryBackgrounds/events/informals.
 import Proshow from "../../assets/images/categoryBackgrounds/events/proshow.png"
 import { useNavigate } from "react-router-dom";
 
+import Headerbackground from "../../assets/images/hero/background.webp";
 const EventListing = () => {
   const navigate = useNavigate();
   const [hovered1, setHovered1] = useState(false);
@@ -17,7 +18,13 @@ const EventListing = () => {
   
   return (
     <div className="scroll-smooth mt-40 flex flex-col w-screen h-full md:h-screen text-xl md:text-2xl">
+         <img
+        src={Headerbackground}
+        className="w-screen md:h-52  h-44 absolute top-0 z-10"
+        alt="Background"
+      />
         <div className="w-full h-[500px] md:h-1/2 flex flex-col md:flex-row transition-all duration-1000">
+            
             <div className={`h-[250px] md:h-full relative overflow-hidden transition-all duration-1000 ${ hovered1 ? "md:flex-[9] border-4 border-white" : "md:flex-[2] border-2 border-[#720A08]"}`}>
                 <div className="tracking-widest text-center flex items-center justify-center absolute top-0 w-full font-bold h-1/4 bg-black/20 font-poppins cursor-pointer" onMouseEnter={() => setHovered1(true)} onMouseLeave={() => setHovered1(false)} >PROSHOWS &gt;</div>
                 <img src={Proshow} className="object-fill h-full w-full"/>
