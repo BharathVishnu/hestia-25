@@ -15,8 +15,8 @@ const EventDetailViewPage = () => {
   const [eventdetails, seteventdetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const { slug } = useParams();
-  useEffect(()=>{
-    window.scrollTo(0,0)
+  useEffect(() => {
+    window.scrollTo(0, 0)
   })
   useEffect(() => {
     console.log(slug)
@@ -155,29 +155,35 @@ const EventDetailViewPage = () => {
 
                 </div>
                 {/* contact */}
+
                 <div className='flex flex-col '>
-                  <h1 className='capitalize text-black font-poppins text-2xl'>Contact</h1>
-                  <div className='w-full bg-[#720A08] h-auto text-white font-bold pl-5 pr-5 pt-2 pb-2'>
+                  {eventdetails.coordinator_1 && eventdetails.coordinator_2 && (
+                    <div className='flex flex-col '>
+                      <h1 className='capitalize text-black font-poppins text-2xl'>Contact</h1>
+                      <div className='w-full bg-[#720A08] h-auto text-white font-bold pl-5 pr-5 pt-2 pb-2'>
                         <div className='flex flex-col sm:flex-row justify-between gap-10'>
                           <div className='flex flex-col'>
-                            <h1 className='text-xl'>{eventdetails?.coordinator_1.name}</h1>
-                            <h1 className='text-sm'>{eventdetails?.coordinator_1.email}</h1>
-                            <h1 className='text-sm'>{eventdetails?.coordinator_1.phone_number}</h1>
+                            <h1 className='text-xl'>{eventdetails?.coordinator_1?.name}</h1>
+                            <h1 className='text-sm'>{eventdetails?.coordinator_1?.email}</h1>
+                            <h1 className='text-sm'>{eventdetails?.coordinator_1?.phone_number}</h1>
                           </div>
                           <div className='flex flex-col'>
-                            <h1 className='text-xl'>{eventdetails?.coordinator_2.name}</h1>
-                            <h1 className='text-sm'>{eventdetails?.coordinator_2.email}</h1>
-                            <h1 className='text-sm'>{eventdetails?.coordinator_2.phone_number}</h1>
+                            <h1 className='text-xl'>{eventdetails?.coordinator_2?.name}</h1>
+                            <h1 className='text-sm'>{eventdetails?.coordinator_2?.email}</h1>
+                            <h1 className='text-sm'>{eventdetails?.coordinator_2?.phone_number}</h1>
                           </div>
                         </div>
-                  </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* prize */}
-                  {eventdetails.prize >0 && <div className='flex justify-end mr-20'>
-                        <div className='flex flex-col gap-10 justify-between'> 
-                            <h1 className='text-black font-bold text-xl font-poppins'>PRICES WORTH</h1>
-                           <h1 className='text-center font-bold text-[#FBAD44] text-6xl'>{eventdetails?.prize}K</h1>
-                        </div>
-                  </div>  } 
+                  {eventdetails.prize > 0 && <div className='flex justify-end mr-20'>
+                    <div className='flex flex-col gap-10 justify-between'>
+                      <h1 className='text-black font-bold text-xl font-poppins'>PRICES WORTH</h1>
+                      <h1 className='text-center font-bold text-[#FBAD44] text-6xl'>{eventdetails?.prize}K</h1>
+                    </div>
+                  </div>}
                 </div>
               </div>
 
@@ -185,10 +191,10 @@ const EventDetailViewPage = () => {
 
           </div>
           <div className='flex flex-col right-0 items-end gap-10 w-full'>
-                    <div className="bg-[#720A08] h-4 w-6/12">
-                    </div>
-                    <div className="bg-white h-4 w-3/12">
-                    </div>
+            <div className="bg-[#720A08] h-4 w-6/12">
+            </div>
+            <div className="bg-white h-4 w-3/12">
+            </div>
           </div>
 
         </>
