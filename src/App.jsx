@@ -17,6 +17,7 @@ import { getUserDetailsAPI } from "./services/user";
 import { campusAmbassodorAPI } from "./services/campusAmbassadorAPI.js";
 import Footer from "./components/footer/Footer.jsx";
 import Proshowbooking from "./pages/proshow/Proshowbooking.jsx";
+import { LoadingContextProvider } from "./context/loading.jsx";
 //import Sponsor from "./pages/sponsors/Sponsor.jsx";
 
 function RequireAuth() {
@@ -93,6 +94,7 @@ function App() {
   return (
     <>
       <div className=" overflow-x-hidden max-w-screen">
+        <LoadingContextProvider>
         <BrowserRouter>
           <Navbar />
           
@@ -189,7 +191,9 @@ function App() {
             <Footer />
           </div>
         </BrowserRouter>
+        </LoadingContextProvider>
       </div>
+      
     </>
   );
 }
